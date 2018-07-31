@@ -8,9 +8,10 @@ License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: tidyverse,
-         cowplot
+         ggforce
 Depends: tidyverse,
          cowplot,
+         ggforce,
          grid,
          gridSVG,
          grImport2,
