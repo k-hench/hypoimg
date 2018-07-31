@@ -1,0 +1,25 @@
+Package: hypoimg
+Type: Package
+Title: Provides Hypoplectrus image annotations
+Version: 0.0.0.9000
+Author: person("Kosmas", "Hench", email="k.hench.r@gmx.net", role = c("aut", "cre"))
+Description: 
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: tidyverse,
+         cowplot
+Depends: tidyverse,
+         cowplot,
+         grid,
+         gridSVG,
+         grImport2,
+         grConvert
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat,
+    hypoimg
+VignetteBuilder: knitr
+
+
