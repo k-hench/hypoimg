@@ -4,10 +4,18 @@ author: "Kosmas Hench"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{hypoimg intro}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{css, echo=FALSE}
+img {
+  border: 0;
+}
+```
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
@@ -20,7 +28,76 @@ devtools::load_all("~/Desktop/hypo_Rlab/hypoimg/")
 
 ## About the package:
 
-The **hypoimg** package helps with population genetic analysis based on the hamlet reference genome (*Hypoplectrus puella*). It contains two functions to import population genetic statistics as produced by e.g. [VCFtools](https://vcftools.github.io/index.html) (`hypo_import_snps()` & `hypo_import_windows()`) in the context of the hamlet genome. Furthermore it provides one template for genome wide plots (`geom_hypo_LG()`) and one template to set statistics into the context of the genome annotation (`hypo_annotation_baseplot()`).
+The **hypoimg** package provides illustrations to annotate plots within studies of the Caribbean hamlets (*Hypoplectrus spp*).
 
-In addition to this the package contains a few helpers for a consistent plot layout.
-More *artistic* aspects of hamlet analysis plots are provided by the [**hypoimg**](www.github.com/k-hench/hypoimg) package.
+It contains the basic illustrations of different hamlet species and countries where hamlets occur. Additionally, the package provides a set of functions to construct legends which link a color map with a set of hamlet species, pairwise species comparisons (or countries).
+
+Additionally to this package, resources for the analysis of genomic data of hamlets are provided within the [**hypogen**](www.github.com/k-hench/hypogen) package.
+
+## Installation
+
+Using the **devtools** package, **hypoinmg** can be installed directly from github:
+
+```{r install, eval = FALSE}
+devtools::install_github("k-hench/hypoimg")
+```
+
+## Hamlet annotations
+
+The core of the **hypoimg** package is the selection of hamlet illustrations:
+
+```{r hypoGallery, echo = FALSE, out.width = "95%", fig.width = 12}
+ggplot(tibble(x = c(0,5.2), y = c(0,0)),aes(x = x, y = y))+
+  geom_blank()+theme_void()+
+  coord_fixed()+
+  hypo_anno_r('puella', xmin = 0, xmax = 1)+
+  hypo_anno_l('providencianus', xmin = 1.2, xmax = 2.2)+
+  hypo_anno_l('indigo', xmin = 2.2, xmax = 3.2)+
+  hypo_anno_l('gumigutta', xmin = 3.2, xmax = 4.2)+
+  hypo_anno_l('unicolor', xmin = 4.2, xmax = 5.2)+
+  scale_y_continuous(limits = c(-.2,.2))+
+  theme(panel.background = element_rect())
+```
+
+The package contains one left and one right facing illustration for 19 different hamlet species and morphotypes. THey are made available as *grid objects* (grob) in the tibble `hypo_img`:
+
+```{r hypoTibble}
+hypo_img
+
+```
+
+A pure version of the hamle annotations can be added to any ggplot using the the functions `hypo_anno_l()` and `hypo_anno_l()`. These functions are simple wrappers around the **ggplot2** function `annotation_custom(()`.
+
+```{r pureAnno, out.width = "95%", out.height = "90%", fig.width = 9}
+ggplot(tibble(x = c(3, 3.25, 3.75),y = c(-.1, -.3, .3)),
+       aes(x = x, y = y))+
+  geom_line(size = 4, color = "#35B779")+
+  hypo_anno_r('puella', xmin = 0, xmax = 1)+
+  hypo_anno_l('indigo', xmin = 1.5, xmax = 2.5)+
+  coord_fixed()+
+  scale_x_continuous(limits = c(0, 3.75))+
+  scale_y_continuous(limits = c(-.35, .35))
+```
+
+A common task is a contrast different hamlet species in genomic or ecologic terms.
+Here it might be useful to assign individual colors to the individual hamlet species.
+The **hypoimg** package provides a way to create a custom legend for su a situation.
+
+An individual color - species assignment can be shown using the `hypo_anno_single()` function:
+
+```{r singleHypoBlock, out.width = "95%", fig.width = 12}
+hypo_anno_single('aberrans',
+                 circle_fill = "#35B779", circle_color = 'black',
+                 plot_names = TRUE, plot_name_size = 5)
+```
+
+
+## Flag annotations
+
+## geom_grob
+
+---------------------------------
+
+<center>
+<img src = "logo.svg" width = 20% />
+</center>
