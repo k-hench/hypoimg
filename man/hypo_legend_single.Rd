@@ -6,7 +6,7 @@
 \usage{
 hypo_legend_single(species, color_map, circle_color = NA, circle_lwd = 0.5,
   plot_names = FALSE, plot_name_size = 3, font_family = "sans",
-  plot = TRUE)
+  ncol = 1, plot = TRUE)
 }
 \arguments{
 \item{species}{string vector (manatory), can only contain available species}

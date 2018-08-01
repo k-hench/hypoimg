@@ -274,7 +274,7 @@ hypo_anno_pair <- function(left, right, circle_color = NA, circle_fill = "white"
 hypo_legend_single <- function(species,color_map,
                                circle_color = NA, circle_lwd = .5,
                                plot_names = FALSE, plot_name_size = 3,font_family = 'sans',
-                               plot = TRUE){
+                               ncol = 1, plot = TRUE){
   n <- length(species)
   stopifnot(n > 0)
   stopifnot(length(color_map) == n)
@@ -293,7 +293,7 @@ hypo_legend_single <- function(species,color_map,
 
   if (plot == TRUE) {
     out <- cowplot::plot_grid(plotlist = legend_list,
-                                ncol = 1,align='v')
+                                ncol = ncol,align='v')
     return(out)
   } else {
     return(legend_list)
@@ -346,7 +346,7 @@ hypo_legend_single <- function(species,color_map,
 hypo_legend_pair <- function(left,right,color_map,
                              circle_color = NA, circle_lwd = .5,
                              plot_names = FALSE, plot_name_size = 3,
-                             font_family = 'sans', plot = TRUE){
+                             font_family = 'sans',ncol = 1, plot = TRUE){
   n <- length(left)
   stopifnot(n > 0)
   stopifnot(length(right) == n)
@@ -367,7 +367,7 @@ hypo_legend_pair <- function(left,right,color_map,
 
   if (plot == TRUE) {
     out <- cowplot::plot_grid(plotlist = legend_list,
-                              ncol = 1,align='v')
+                              ncol = ncol,align='v')
     return(out)
   } else {
     return(legend_list)

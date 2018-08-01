@@ -6,7 +6,7 @@
 \usage{
 hypo_legend_pair(left, right, color_map, circle_color = NA,
   circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", plot = TRUE)
+  font_family = "sans", ncol = 1, plot = TRUE)
 }
 \arguments{
 \item{left}{string vector (manatory), can only contain available species}

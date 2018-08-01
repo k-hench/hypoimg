@@ -59,14 +59,14 @@ ggplot(tibble(x = c(0,5.2), y = c(0,0)),aes(x = x, y = y))+
   theme(panel.background = element_rect())
 ```
 
-The package contains one left and one right facing illustration for 19 different hamlet species and morphotypes. THey are made available as *grid objects* (grob) in the tibble `hypo_img`:
+The package contains one left and one right facing illustration for 19 different hamlet species and morphotypes. They are made available as *grid objects* (grob) in the tibble `hypo_img`:
 
 ```{r hypoTibble}
 hypo_img
 
 ```
 
-A pure version of the hamle annotations can be added to any ggplot using the the functions `hypo_anno_l()` and `hypo_anno_l()`. These functions are simple wrappers around the **ggplot2** function `annotation_custom(()`.
+A pure version of the hamlet annotations can be added to any ggplot using the the functions `hypo_anno_l()` and `hypo_anno_l()`. These functions are simple wrappers around the **ggplot2** function `annotation_custom(()`.
 
 ```{r pureAnno, out.width = "95%", out.height = "90%", fig.width = 9}
 ggplot(tibble(x = c(3, 3.25, 3.75),y = c(-.1, -.3, .3)),
@@ -81,20 +81,226 @@ ggplot(tibble(x = c(3, 3.25, 3.75),y = c(-.1, -.3, .3)),
 
 A common task is a contrast different hamlet species in genomic or ecologic terms.
 Here it might be useful to assign individual colors to the individual hamlet species.
-The **hypoimg** package provides a way to create a custom legend for su a situation.
+The **hypoimg** package provides a way to create a custom legend for such a situation.
 
 An individual color - species assignment can be shown using the `hypo_anno_single()` function:
 
 ```{r singleHypoBlock, out.width = "95%", fig.width = 12}
-hypo_anno_single('aberrans',
+hypo_anno_single(species = 'aberrans',
                  circle_fill = "#35B779", circle_color = 'black',
                  plot_names = TRUE, plot_name_size = 5)
+```
+
+The same is possible for pairs of species using `hypo_anno_pair()`:
+
+```{r pairHypoBlock, out.width = "95%", fig.width = 12}
+hypo_anno_pair(left = 'ecosur', right = 'maya',
+               circle_fill = "#F16913", circle_color = 'black',
+               plot_names = TRUE, plot_name_size = 5)
+```
+
+If several different species are used within one plot a custom legend can be generated based on the species list and the color map using `hypo_legend_single()`.
+
+To be able to use this legend the it needs to be transformed into a grob using `ggplot2::ggplotGrob()`.
+
+```{r singleHypoLegend, out.width = "85%", fig.width = 8,fig.height = 8}
+set.seed(42)
+
+# For this demonstration we'll create a fake length - weight reltionship data table.
+# To do this, we'll implement the relationship as stated by fishbase for H. puella:
+# http://www.fishbase.se/summary/Hypoplectrus-puella.html
+hamlet_length_weight <- function(x, a = 0.009, b = 3.04 , rand = 0){
+  a * x^b + rnorm(length(x)) * rand
+}
+
+# The species involved in the fake data set
+hamlet_species <- c('nigricans', 'unicolor', 'gemma')
+
+# The fake dataset
+hamlet_data <- tibble(species = rep(hamlet_species, each = 10),
+                      len = sample(5:17, replace = TRUE , size = 30)+rnorm(30)) %>% 
+  mutate(weig = ifelse(species == 'nigricans',
+                       hamlet_length_weight(x = len, rand = 1) + rnorm(10),
+                       ifelse(species == 'unicolor',
+                              hamlet_length_weight(x = len, b = 3.14,rand = 1.5),
+                              hamlet_length_weight(x = len, b = 2.94,rand = 1.5))))
+
+# Our color map
+clr_single <- viridis::viridis(3)
+
+# The custom legend is created based on the species list and the color map
+legend_grob_single <- hypo_legend_single(species = hamlet_species, color_map = clr_single,
+                 circle_color = 'black', plot_names = TRUE) %>% 
+  ggplotGrob()
+
+# We add the custom legend using ggplot2::annotation_custom()
+ggplot(hamlet_data, aes(x = len, y = weig,
+                        color = species, fill = species)) +
+  geom_line(size = 1.2)+
+  geom_point(color = "black", size = 2.5, shape = 21)+
+  annotation_custom(legend_grob_single,xmin = 3,xmax = 9.5, ymin = 42)+
+  labs(x = "Length (cm)",
+       y = "Weight (g)")+
+  scale_color_manual(values = clr_single, guide = FALSE)+
+  scale_fill_manual(values = clr_single, guide = FALSE)
+```
+
+Similarly, the pair wise elements can be combined into a legend using `hypo_legend_pair()`
+
+```{r pairedHypoLegend, out.width = "95%", fig.width = 10,fig.height = 6}
+# The species involved in the fake data set
+left <- c("aberrans", "aberrans", "chlorurus")
+right <- c("aberrans", "chlorurus",  "chlorurus")
+
+# For this demonstration we'll create a fake pairing experiment with egg counts.
+# this function samples counts for 15 pairings 
+egg_c <- function(x){sample(x,size = 15,replace = TRUE)} 
+
+# The fake dataset
+pairing_data <- tibble(pair = rep(str_c(left, right, sep = "-"), 
+                                 each = 15),
+                      pairing_egg_counts = c(egg_c(90:110),egg_c(50:95), egg_c(60:100)),
+                      time_point = factor(rep(rep(c('morning','noon','evening'),
+                                                 each=5),
+                                             3),
+                                         levels = c('morning','noon','evening')))
+
+# Our color map
+clr_pair <- RColorBrewer::brewer.pal(3,"RdBu")
+
+# The custom legend is created based on two species lists and the color map
+legend_grob_pair <- hypo_legend_pair(left = left, right = right,
+                                     color_map = clr_pair,
+                                     circle_color = 'black',
+                                     plot_names = TRUE,
+                                     circle_lwd = .5) %>%
+  ggplotGrob()
+
+# We add the custom legend using ggplot2::annotation_custom()
+ggplot(pairing_data, aes(y = pairing_egg_counts,
+                         x = time_point,
+                         fill = pair))+
+  geom_boxplot()+
+  annotation_custom(legend_grob_pair,
+                    xmin = 3.25, ymin = 70)+
+  coord_cartesian(xlim = c(0.75,4.6))+
+  labs(x = "Time point",
+       y = "Egg count / pairing (n)")+
+  scale_fill_manual(values = clr_pair,guide = FALSE)
+
 ```
 
 
 ## Flag annotations
 
+```{r flagGallery, echo = FALSE, out.width = "95%", fig.width = 12}
+ggplot(tibble(x = c(0,5.2), y = c(0,0)),aes(x = x, y = y))+
+  geom_blank()+
+  theme_void()+
+  coord_fixed()+
+  hypo_anno_flag('cuba', xmin = 0, xmax = 1)+
+  hypo_anno_flag('caribbean', xmin = 2, xmax = 3)+
+  hypo_anno_flag('panama', xmin = 4, xmax = 5)+
+  scale_y_continuous(limits = c(-.2,.2))+
+  theme(panel.background = element_rect())
+```
+
+Besides the hamlet illustrations, the **hypoimg** also provides labels for all countries of the Caribbean and the Golf of Mexico:
+
+```{r flaggTibble}
+hypo_flag
+```
+
+An overview of all the flags can be generated with `hypo_flag_palette()`.
+```{r flagPalette, out.width = "100%", fig.width = 11, fig.height = 12}
+hypo_flag_palette()
+```
+
+Apart from this there exist one flag version for all of the previously discussed functions:
+
+- `hypo_anno_flag()`
+- `hypo_anno_flag_single()`
+- `hypo_anno_flag_pair()`
+- `hypo_legend_flag_single()`
+- `hypo_legend_flag_pair()`
+
+
+```{r flagShowRoom, echo = FALSE, out.width = "100%", fig.width = 11, fig.height = 4}
+set.seed(3)
+p1 <- ggplot(data = tibble(x=seq(0,10,length.out = 50),y=sin(x)+.3*rnorm(50)),aes(x=x,y=y))+
+  geom_area(fill = alpha('black',.2))+
+  geom_point()+
+  hypo_anno_flag('panama',xmin = 4.2,xmax = 5.2,ymin = -.5,ymax = -.05)+
+  scale_x_continuous(limits = c(0,10))+coord_fixed(ratio = 3)
+
+p2 <- hypo_anno_flag_single(geo = 'trinidad_and_tobago',
+                      flag_lwd = 1, flag_line_color = 'black',
+                      flag_radius_scale = 1, circle_fill = RColorBrewer::brewer.pal(3,'Blues')[3],
+                      circle_color = 'black',circle_lwd = 1,plot_names = TRUE)
+
+
+p3 <- hypo_legend_flag_pair(left = c('panama','mexico','cuba'),
+                      right = c('mexico','cuba','panama'),
+                      color_map = RColorBrewer::brewer.pal(3,'PRGn'),
+                 flag_lwd = 1, flag_line_color = 'black',
+                 flag_radius_scale = 1,
+                 circle_color = 'black', plot_names = TRUE)
+
+cowplot::plot_grid(p1, p2, p3, nrow = 1)
+```
+
+
 ## geom_grob
+
+Finally, the **hypoimg** package implements a new geom: `geom_hypo_grob()`.
+
+This geom provides a possibility to distribute grobs over different facets of a ggplot.
+It needs a tibble that organizes the grobs according to the facetting levels.
+
+This geom builds heavily on the answer by baptiste on the tidiverse github forum [issue 1399](https://github.com/tidyverse/ggplot2/issues/1399).
+To the original answer, only the parameters height, width and angle have been added.
+
+```{r geomGrob, out.width = "100%", fig.width = 11, fig.height = 6, warning = FALSE}
+# Our color map
+clr <- c(RColorBrewer::brewer.pal(5,'Oranges')[3],
+         RColorBrewer::brewer.pal(5,'Blues')[5])
+
+# creating a list of grobs from single hamlet legend elements
+grobs <- list(hypo_anno_single(species = 'indigo',
+                 circle_fill = clr[2],
+                 circle_lwd = 1,circle_color = 'black') %>%
+                ggplotGrob(),
+              hypo_anno_single(species = 'chlorurus',
+                               circle_fill = clr[1],
+                               circle_lwd = 1,circle_color = 'black') %>%
+                ggplotGrob())
+
+# The tibbble that combines grobs, aesthetic and facetting levels
+grob_list <- tibble(RUN = c('ind', 'chl'),
+                    angle = c(30, -30),
+                    height = c(.9,.7),
+                    grob = grobs)
+
+# some fake data set
+test_df <- tibble(x = rep(1:10, 2),
+                  y = rnorm(20),
+                  RUN = rep(c('ind', 'chl'), each = 10))
+
+# Using geom_hypo_grob() to distribute the grobs
+ggplot()+
+  facet_grid(RUN~.)+
+  geom_hypo_grob(data=grob_list,
+                 aes(grob=grob,angle=angle,height=height),
+                 inherit.aes = FALSE, x = .85, y=0.5)+
+  geom_line(data = test_df,
+             aes(x=x,y=y,color=RUN),size=2)+
+  geom_point(data = test_df,
+             aes(x=x,y=y,fill=RUN),shape=21,size=4)+
+  scale_x_continuous(expand=c(0,0),limits = c(0,14))+
+  scale_fill_manual(values = clr)+
+  scale_color_manual(values = clr)+
+  theme(legend.position = 'bottom')
+```
 
 ---------------------------------
 
