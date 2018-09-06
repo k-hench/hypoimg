@@ -62,7 +62,7 @@ ggplot()+
 
 This can be used to create a tbale of color variants:
 
-```{r recolorTable, out.width = "95%", fig.width = 12, fig.height = 6, message = FALE, warning = FALSE}
+```{r recolorTable, out.width = "95%", fig.width = 12, fig.height = 6, message = FASLE, warning = FALSE}
 n = 9
 tab <- hypo_recolor_grob_table(svg,
                           LETTERS[1:n],
