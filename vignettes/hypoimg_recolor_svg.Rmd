@@ -7,11 +7,7 @@ vignette: >
   %\VignetteIndexEntry{hypoimg_recolor_svg}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-<<<<<<< HEAD
 editor_options:
-=======
-  editor_options:
->>>>>>> 9eea1aaa8fdca39a18348762c4b55d59ac4ccdc5
   chunk_output_type: console
 ---
 
