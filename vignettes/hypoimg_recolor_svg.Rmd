@@ -99,6 +99,6 @@ ggplot()+
 
 ---------------------------------
 
-  <center>
-  <img src = "logo.svg" width = 20% />
-  </center>
+<center>
+<img src = "logo.svg" width = 20% />
+</center>
