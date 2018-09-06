@@ -54,7 +54,7 @@ ggplot(tibble(x=rnorm(100),y=rnorm(100)))+
 
 Individual layers of the image can be recolored using the `hypo_recolor_svg()` function:
 
-```{r recolorSingle, out.width = "95%", fig.width = 12, message = FALE, warning = FALSE}
+```{r recolorSingle, out.width = "95%", fig.width = 12, message = FALSE, warning = FALSE}
 svg_new <- hypo_recolor_svg(svg, layer = 1, color = "#2B5B99")
 ggplot()+
   annotation_custom(svg_new)
@@ -82,7 +82,7 @@ ggplot(tibble(x=1:2),aes(x=x,y=x))+
 
 Finally, `hypo_recolor_svg()` can be applyed multiple times to recolor several layers:
 
-```{r recolorMultiple, out.width = "95%", fig.width = 12, fig.height = 4, message = FALE, warning = FALSE}
+```{r recolorMultiple, out.width = "95%", fig.width = 12, fig.height = 4, message = FALSE, warning = FALSE}
 svg_file_2 <- system.file("extdata", "logo2.c.svg", package = "hypoimg")
 svg_2 <- hypo_read_svg(svg_file_2)
 
