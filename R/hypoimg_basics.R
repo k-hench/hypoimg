@@ -134,12 +134,12 @@ hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", 
     coord_fixed(xlim = c(-1, 1))+
     theme_void()+
     scale_x_continuous(expand = c(0, 0))+
-    scale_y_continuous(limits = c(-.35, .35))+
+    scale_y_continuous(limits = c(-.37, .37))+
     annotation_custom(hypo_img$l[[nr_species]],
                       xmin = -.45,xmax = .45,ymin = -Inf, ymax = Inf)
 
   if(plot_names){
-    names_df <- tibble(name = str_c('italic(H.~',species,')'),
+    names_df <- tibble(name = str_c('italic(',hypo_img$geno[nr_species],'.~',species,')'),
                        x = 0,
                        y = -.35)
 
