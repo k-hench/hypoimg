@@ -4,10 +4,10 @@
 \alias{hypo_legend_flag_single}
 \title{Constructs a legend of single flags}
 \usage{
-hypo_legend_flag_single(geo, color_map, flag_lwd = 1, flag_line_color = NA,
-  flag_radius_scale = 1, circle_color = NA, circle_lwd = 0.5,
-  plot_names = FALSE, plot_name_size = 3, font_family = "sans",
-  plot = TRUE)
+hypo_legend_flag_single(geo, color_map, flag_lwd = 1,
+  flag_line_color = NA, flag_radius_scale = 1, circle_color = NA,
+  circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
+  font_family = "sans", plot = TRUE)
 }
 \arguments{
 \item{geo}{string skalar (manatory), one of the available flag IDs}

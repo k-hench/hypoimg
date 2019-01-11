@@ -16,12 +16,10 @@ Depends: tidyverse,
          grid,
          gridSVG,
          grImport2
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Suggests: knitr,
     rmarkdown,
     testthat,
     hypogen,
     grConvert
 VignetteBuilder: knitr
-
-

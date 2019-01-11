@@ -4,7 +4,8 @@
 \alias{hypo_anno_l}
 \title{Add a left facing hamlet to a ggplot}
 \usage{
-hypo_anno_l(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf)
+hypo_anno_l(species, xmin = -Inf, xmax = Inf, ymin = -Inf,
+  ymax = Inf)
 }
 \arguments{
 \item{species}{string skalar (manatory), one of "aberrans","atlahua",

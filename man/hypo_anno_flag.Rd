@@ -4,8 +4,8 @@
 \alias{hypo_anno_flag}
 \title{Add a flag to a ggplot}
 \usage{
-hypo_anno_flag(geo, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf,
-  ...)
+hypo_anno_flag(geo, xmin = -Inf, xmax = Inf, ymin = -Inf,
+  ymax = Inf, ...)
 }
 \arguments{
 \item{geo}{string skalar (manatory), one of the available flag IDs}
