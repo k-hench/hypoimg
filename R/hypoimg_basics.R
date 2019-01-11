@@ -296,9 +296,10 @@ hypo_anno_pair_split <- function(left, right, circle_color = NA, circle_fill_lef
     scale_fill_manual(values = c(circle_fill_left,circle_fill_right),guide=FALSE)+
     scale_x_continuous(expand = c(0, 0))+
     scale_y_continuous(limits = c(-.4, .38))+
-    annotation_custom(hypo_img$l[[nr_left]],
+    # careful: RIGHT (nr_right) side of circe is facing LEFT (hypo_img$l)
+    annotation_custom(hypo_img$l[[nr_right]],
                       xmin = .05,xmax = 1,ymin = -Inf, ymax = Inf)+
-    annotation_custom(hypo_img$r[[nr_right]],
+    annotation_custom(hypo_img$r[[nr_left]],
                       xmin = -1,xmax = -.05,ymin = -Inf, ymax = Inf)
 
   if(plot_names){
