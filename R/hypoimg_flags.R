@@ -154,7 +154,7 @@ hypo_anno_flag_single <- function(geo, flag_lwd = 1, flag_line_color = NA, flag_
                        y = -.35)
 
     p_names <- p +
-      geom_text(data = names_df, aes(x = x, y = y, label = name),
+      geom_text(data = names_df, aes(x = x, y = y, label = stringr::str_to_title(name)),
                 size = plot_name_size , family = font_family)
     return(p_names)
   } else {
@@ -239,7 +239,7 @@ hypo_anno_flag_pair <- function(left, right,flag_lwd = 1, flag_line_color = NA, 
                        y = c(-.35, -.35))
 
     p_names <- p +
-      geom_text(data = names_df, aes(x = x, y = y, label = name),
+      geom_text(data = names_df, aes(x = x, y = y, label = stringr::str_to_title(name)),
                 size = plot_name_size , family = font_family)
     return(p_names)
   } else {
