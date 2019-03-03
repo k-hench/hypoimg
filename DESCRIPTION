@@ -2,7 +2,8 @@ Package: hypoimg
 Type: Package
 Title: Provides Hypoplectrus image annotations
 Version: 0.0.0.9001
-Author: person("Kosmas", "Hench", email="khench@posteo.net", role = c("aut", "cre"))
+Author: person("Kosmas", "Hench", email="khench@posteo.net", role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0003-1119-187X"))
 Description: The hypoimg package provides illustrations to annotate
     plots within studies of the Caribbean hamlets (Hypoplectrus spp).
 License: GPL-3 | file LICENSE
