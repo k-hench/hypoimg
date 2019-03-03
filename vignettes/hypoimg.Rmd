@@ -7,7 +7,7 @@ vignette: >
   %\VignetteIndexEntry{hypoimg intro}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-devtools::load_all("~/Desktop/hypo_Rlab/hypoimg/")
+library("hypoimg")
 ```
 
 ## About the package:
@@ -118,7 +118,7 @@ hamlet_species <- c('nigricans', 'unicolor', 'gemma')
 
 # The fake dataset
 hamlet_data <- tibble(species = rep(hamlet_species, each = 10),
-                      len = sample(5:17, replace = TRUE , size = 30)+rnorm(30)) %>% 
+                      len = sample(5:17, replace = TRUE , size = 30)+rnorm(30)) %>%
   mutate(weig = ifelse(species == 'nigricans',
                        hamlet_length_weight(x = len, rand = 1) + rnorm(10),
                        ifelse(species == 'unicolor',
@@ -130,7 +130,7 @@ clr_single <- viridis::viridis(3)
 
 # The custom legend is created based on the species list and the color map
 legend_grob_single <- hypo_legend_single(species = hamlet_species, color_map = clr_single,
-                 circle_color = 'black', plot_names = TRUE) %>% 
+                 circle_color = 'black', plot_names = TRUE) %>%
   ggplotGrob()
 
 # We add the custom legend using ggplot2::annotation_custom()
@@ -153,11 +153,11 @@ left <- c("aberrans", "aberrans", "chlorurus")
 right <- c("aberrans", "chlorurus",  "chlorurus")
 
 # For this demonstration we'll create a fake pairing experiment with egg counts.
-# this function samples counts for 15 pairings 
-egg_c <- function(x){sample(x,size = 15,replace = TRUE)} 
+# this function samples counts for 15 pairings
+egg_c <- function(x){sample(x,size = 15,replace = TRUE)}
 
 # The fake dataset
-pairing_data <- tibble(pair = rep(str_c(left, right, sep = "-"), 
+pairing_data <- tibble(pair = rep(str_c(left, right, sep = "-"),
                                  each = 15),
                       pairing_egg_counts = c(egg_c(90:110),egg_c(50:95), egg_c(60:100)),
                       time_point = factor(rep(rep(c('morning','noon','evening'),
