@@ -1,7 +1,5 @@
 ---
 title: "Recolor svg files"
-author: "Kosmas Hench"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{hypoimg_recolor_svg}
@@ -26,7 +24,7 @@ knitr::opts_chunk$set(
 library("hypoimg")
 ```
 
-## svg files
+## Load svg files
 
 The **hypoimg** package provides tools read external svg files into R to use for plot annotation.
 (The svg needs to be a cairo svg - to transform your svg into
@@ -51,6 +49,8 @@ ggplot(tibble(x=rnorm(100),y=rnorm(100)))+
              color="#AA1F00")
 
 ```
+
+## Recolor single layer
 
 Individual layers of the image can be recolored using the `hypo_recolor_svg()` function:
 
