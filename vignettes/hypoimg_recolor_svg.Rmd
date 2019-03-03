@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-devtools::load_all("~/Desktop/hypo_Rlab/hypoimg/")
+library("hypoimg")
 ```
 
 ## svg files
@@ -89,7 +89,7 @@ svg_2 <- hypo_read_svg(svg_file_2)
 clr <- scico::scico(25)
 ggplot()+
   annotation_custom(svg_2,xmax = .5)+
-  annotation_custom(svg_2 %>% 
+  annotation_custom(svg_2 %>%
                       hypo_recolor_svg(.,layer = 1,clr[1]) %>%
                       hypo_recolor_svg(.,layer = 2,clr[8]) %>%
                       hypo_recolor_svg(.,layer = 3,clr[16]) %>%
