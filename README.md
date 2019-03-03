@@ -2,6 +2,8 @@
 
 The **R** package **hypoimg** provides hamlet drawings to annotate plots.
 
+Please also look at the [documentation](https://k-hench.github.io/hypoimg/index.html).
+
 ## Install
 
 To install **hypoimg** please run:
