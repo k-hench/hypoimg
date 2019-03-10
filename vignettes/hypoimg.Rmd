@@ -1,13 +1,11 @@
 ---
 title: "The hypoimg package"
-author: "Kosmas Hench"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{hypoimg intro}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-editor_options: 
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options:
   chunk_output_type: console
 ---
 
@@ -23,7 +21,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-devtools::load_all("~/Desktop/hypo_Rlab/hypoimg/")
+library("hypoimg")
 ```
 
 ## About the package:
@@ -118,7 +116,7 @@ hamlet_species <- c('nigricans', 'unicolor', 'gemma')
 
 # The fake dataset
 hamlet_data <- tibble(species = rep(hamlet_species, each = 10),
-                      len = sample(5:17, replace = TRUE , size = 30)+rnorm(30)) %>% 
+                      len = sample(5:17, replace = TRUE , size = 30)+rnorm(30)) %>%
   mutate(weig = ifelse(species == 'nigricans',
                        hamlet_length_weight(x = len, rand = 1) + rnorm(10),
                        ifelse(species == 'unicolor',
@@ -130,7 +128,7 @@ clr_single <- viridis::viridis(3)
 
 # The custom legend is created based on the species list and the color map
 legend_grob_single <- hypo_legend_single(species = hamlet_species, color_map = clr_single,
-                 circle_color = 'black', plot_names = TRUE) %>% 
+                 circle_color = 'black', plot_names = TRUE) %>%
   ggplotGrob()
 
 # We add the custom legend using ggplot2::annotation_custom()
@@ -153,11 +151,11 @@ left <- c("aberrans", "aberrans", "chlorurus")
 right <- c("aberrans", "chlorurus",  "chlorurus")
 
 # For this demonstration we'll create a fake pairing experiment with egg counts.
-# this function samples counts for 15 pairings 
-egg_c <- function(x){sample(x,size = 15,replace = TRUE)} 
+# this function samples counts for 15 pairings
+egg_c <- function(x){sample(x,size = 15,replace = TRUE)}
 
 # The fake dataset
-pairing_data <- tibble(pair = rep(str_c(left, right, sep = "-"), 
+pairing_data <- tibble(pair = rep(str_c(left, right, sep = "-"),
                                  each = 15),
                       pairing_egg_counts = c(egg_c(90:110),egg_c(50:95), egg_c(60:100)),
                       time_point = factor(rep(rep(c('morning','noon','evening'),
@@ -247,59 +245,6 @@ p3 <- hypo_legend_flag_pair(left = c('panama','mexico','cuba'),
                  circle_color = 'black', plot_names = TRUE)
 
 cowplot::plot_grid(p1, p2, p3, nrow = 1)
-```
-
-
-## geom_grob
-
-Finally, the **hypoimg** package implements a new geom: `geom_hypo_grob()`.
-
-This geom provides a possibility to distribute grobs over different facets of a ggplot.
-It needs a tibble that organizes the grobs according to the facetting levels.
-
-This geom builds heavily on the answer by baptiste on the tidiverse github forum [issue 1399](https://github.com/tidyverse/ggplot2/issues/1399).
-To the original answer, only the parameters height, width and angle have been added.
-
-```{r geomGrob, out.width = "100%", fig.width = 11, fig.height = 6, warning = FALSE}
-# Our color map
-clr <- c(RColorBrewer::brewer.pal(5,'Oranges')[3],
-         RColorBrewer::brewer.pal(5,'Blues')[5])
-
-# creating a list of grobs from single hamlet legend elements
-grobs <- list(hypo_anno_single(species = 'indigo',
-                 circle_fill = clr[2],
-                 circle_lwd = 1,circle_color = 'black') %>%
-                ggplotGrob(),
-              hypo_anno_single(species = 'chlorurus',
-                               circle_fill = clr[1],
-                               circle_lwd = 1,circle_color = 'black') %>%
-                ggplotGrob())
-
-# The tibbble that combines grobs, aesthetic and facetting levels
-grob_list <- tibble(RUN = c('ind', 'chl'),
-                    angle = c(30, -30),
-                    height = c(.9,.7),
-                    grob = grobs)
-
-# some fake data set
-test_df <- tibble(x = rep(1:10, 2),
-                  y = rnorm(20),
-                  RUN = rep(c('ind', 'chl'), each = 10))
-
-# Using geom_hypo_grob() to distribute the grobs
-ggplot()+
-  facet_grid(RUN~.)+
-  geom_hypo_grob(data=grob_list,
-                 aes(grob=grob,angle=angle,height=height),
-                 inherit.aes = FALSE, x = .85, y=0.5)+
-  geom_line(data = test_df,
-             aes(x=x,y=y,color=RUN),size=2)+
-  geom_point(data = test_df,
-             aes(x=x,y=y,fill=RUN),shape=21,size=4)+
-  scale_x_continuous(expand=c(0,0),limits = c(0,14))+
-  scale_fill_manual(values = clr)+
-  scale_color_manual(values = clr)+
-  theme(legend.position = 'bottom')
 ```
 
 ---------------------------------
