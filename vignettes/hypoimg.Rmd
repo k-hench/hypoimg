@@ -64,7 +64,7 @@ hypo_img
 
 ```
 
-A pure version of the hamlet annotations can be added to any ggplot using the the functions `hypo_anno_l()` and `hypo_anno_l()`. These functions are simple wrappers around the **ggplot2** function `annotation_custom(()`.
+A pure version of the hamlet annotations can be added to any ggplot using the the functions `hypo_anno_l()` and `hypo_anno_r()`. These functions are simple wrappers around the **ggplot2** function `annotation_custom(()`.
 
 ```{r pureAnno, out.width = "95%", out.height = "90%", fig.width = 9}
 ggplot(tibble(x = c(3, 3.25, 3.75),y = c(-.1, -.3, .3)),
