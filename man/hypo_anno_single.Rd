@@ -6,7 +6,7 @@
 \usage{
 hypo_anno_single(species, circle_color = NA, circle_fill = "white",
   circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", ...)
+  font_family = "sans", xlims = 0.45, ...)
 }
 \arguments{
 \item{species}{string skalar (manatory), one of the available species}
@@ -26,6 +26,8 @@ be added?}
 \item{plot_name_size}{numeric skalar (optional), the species label size}
 
 \item{font_family}{string skalar (optional), the species label font family}
+
+\item{xlims}{numeric skalar (optional), modifies the horizontal extent of the hamlet}
 }
 \description{
 \code{hypo_anno_single} combines a single hamlet with a colored circle

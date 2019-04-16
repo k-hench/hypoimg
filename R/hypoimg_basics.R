@@ -108,6 +108,7 @@ hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #'   be added?
 #' @param plot_name_size numeric skalar (optional), the species label size
 #' @param font_family string skalar (optional), the species label font family
+#' @param xlims numeric skalar (optional), modifies the horizontal extent of the hamlet
 #'
 #' @seealso \code{\link{hypo_anno_pair}},
 #'   \code{\link{hypo_anno_flag_single}}
@@ -118,7 +119,7 @@ hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #'
 #' @export
 hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", circle_lwd = .5,
-                             plot_names = FALSE, plot_name_size = 3,font_family = 'sans',...){
+                             plot_names = FALSE, plot_name_size = 3,font_family = 'sans',xlims = .45,...){
   stopifnot(length(species) == 1)
   stopifnot(length(plot_names) == 1)
   stopifnot(is.logical(plot_names))
@@ -134,9 +135,9 @@ hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", 
     coord_fixed(xlim = c(-1, 1))+
     theme_void()+
     scale_x_continuous(expand = c(0, 0))+
-    scale_y_continuous(limits = c(-.37, .37))+
+    scale_y_continuous(limits = c(-.37, .37 + (.1 * as.numeric(plot_names))))+
     annotation_custom(hypo_img$l[[nr_species]],
-                      xmin = -.45,xmax = .45,ymin = -Inf, ymax = Inf)
+                      xmin = -xlims,xmax = xlims,ymin = -Inf, ymax = Inf)
 
   if(plot_names){
     names_df <- tibble(name = str_c('italic(',hypo_img$geno[nr_species],'.~',species,')'),
