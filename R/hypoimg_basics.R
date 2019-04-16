@@ -135,7 +135,7 @@ hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", 
     coord_fixed(xlim = c(-1, 1))+
     theme_void()+
     scale_x_continuous(expand = c(0, 0))+
-    scale_y_continuous(limits = c(-.37, .37 + (.1 * as.numeric(plot_names))))+
+    scale_y_continuous(limits = c(-.37, .37 + (.3 * as.numeric(plot_names))))+
     annotation_custom(hypo_img$l[[nr_species]],
                       xmin = -xlims,xmax = xlims,ymin = -Inf, ymax = Inf)
 

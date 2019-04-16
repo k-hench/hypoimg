@@ -51,7 +51,7 @@ ggplot(tibble(x = c(0,5.2), y = c(0,0)),aes(x = x, y = y))+
   hypo_anno_r('puella', xmin = 0, xmax = 1)+
   hypo_anno_l('providencianus', xmin = 1.2, xmax = 2.2)+
   hypo_anno_l('indigo', xmin = 2.2, xmax = 3.2)+
-  hypo_anno_l('gumigutta', xmin = 3.2, xmax = 4.2)+
+  hypo_anno_l('gummigutta', xmin = 3.2, xmax = 4.2)+
   hypo_anno_l('unicolor', xmin = 4.2, xmax = 5.2)+
   scale_y_continuous(limits = c(-.2,.2))+
   theme(panel.background = element_rect())
