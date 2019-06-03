@@ -32,7 +32,7 @@ hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hyp
   ggsave(filename = filename, plot = plot, ...)
 
   if (file_type %in% c('png','pdf')) {
-    create_metadata <- str_c('exiftool -Description="',comment,'" ',filename)
+    create_metadata <- str_c('exiftool -overwrite_original -Description="',comment,'" ',filename)
     system(create_metadata)
 
   } else {
