@@ -10,6 +10,7 @@
 #'
 #' Note: The function assumes a UNIX platform and depends on exiftool
 #' to be installed and located within the $PATH
+#' See https://www.sno.phy.queensu.ca/~phil/exiftool/index.html
 #'
 #' @param filename File name to create on disk.
 #' @param plot Plot to save, defaults to last plot displayed.
@@ -32,7 +33,7 @@ hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hyp
   ggsave(filename = filename, plot = plot, ...)
 
   if (file_type %in% c('png','pdf')) {
-    create_metadata <- str_c('exiftool -Description="',comment,'" ',filename)
+    create_metadata <- str_c('exiftool -overwrite_original -Description="',comment,'" ',filename)
     system(create_metadata)
 
   } else {
@@ -53,6 +54,7 @@ hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hyp
 #'
 #' Note: The function assumes a UNIX platform and depends on exiftool
 #' to be installed and located within the $PATH
+#' See https://www.sno.phy.queensu.ca/~phil/exiftool/index.html
 #'
 #' @param filename File name to create on disk.
 #' @seealso \code{\link{hypo_save}},

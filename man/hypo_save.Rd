@@ -28,6 +28,7 @@ original script later in life.
 
 Note: The function assumes a UNIX platform and depends on exiftool
 to be installed and located within the $PATH
+See https://www.sno.phy.queensu.ca/~phil/exiftool/index.html
 }
 \examples{
 tibble(x = rnorm(20),y= rnorm(20)) \%>\%
