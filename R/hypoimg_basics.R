@@ -1,5 +1,5 @@
 .onAttach <- function(libname, pkgname) {
-  cat("--- Welcome to",crayon::red("hypoimg"),"---")
+  cat("--- Welcome to",crayon::red("hypoimg"),"---\n")
 }
 
 .onLoad <- function(libname, pkgname) {
