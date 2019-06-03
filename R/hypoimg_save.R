@@ -9,7 +9,8 @@
 #' original script later in life.
 #'
 #' Note: The function assumes a UNIX platform and depends on exiftool
-#' to be installed and located within the $PATH
+#' to be installed and located within the $PATH.
+#'
 #' See https://www.sno.phy.queensu.ca/~phil/exiftool/index.html
 #'
 #' @param filename File name to create on disk.
@@ -53,7 +54,8 @@ hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hyp
 #' with \code{hypo_save()}.
 #'
 #' Note: The function assumes a UNIX platform and depends on exiftool
-#' to be installed and located within the $PATH
+#' to be installed and located within the $PATH.
+#'
 #' See https://www.sno.phy.queensu.ca/~phil/exiftool/index.html
 #'
 #' @param filename File name to create on disk.
