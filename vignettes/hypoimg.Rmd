@@ -102,7 +102,7 @@ If several different species are used within one plot a custom legend can be gen
 To be able to use this legend the it needs to be transformed into a grob using `ggplot2::ggplotGrob()`.
 
 ```{r singleHypoLegend, out.width = "85%", fig.width = 8,fig.height = 8}
-set.seed(42)
+set.seed(5)
 
 # For this demonstration we'll create a fake length - weight reltionship data table.
 # To do this, we'll implement the relationship as stated by fishbase for H. puella:
