@@ -6,7 +6,7 @@
 \usage{
 hypo_anno_single(species, circle_color = NA, circle_fill = "white",
   circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", xlims = 0.45, ...)
+  font_family = "sans", xlims = 0.45, ylims = 0.335, ...)
 }
 \arguments{
 \item{species}{string skalar (manatory), one of the available species}

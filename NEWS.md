@@ -1,3 +1,7 @@
+# hypoimg 1.0.0.5
+
+* minor bugfix in the hypo_anno_single() y-limits.
+
 # hypoimg 1.0.0.4
 
 * adding functions hypo_save() to add metadata to a plot

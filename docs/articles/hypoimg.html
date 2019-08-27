@@ -6,9 +6,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The hypoimg package • hypoimg</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="The hypoimg package">
 <meta property="og:description" content="">
 <meta property="og:image" content="/logo.png">
@@ -31,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hypoimg</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.5</span>
       </span>
     </div>
 
@@ -39,7 +46,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -71,7 +78,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/k-hench/hypoimg">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -84,6 +91,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -113,7 +121,7 @@ img {
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Using the <strong>devtools</strong> package, <strong>hypoinmg</strong> can be installed directly from github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"k-hench/hypoimg"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/reexports.html">install_github</a></span>(<span class="st">"k-hench/hypoimg"</span>)</a></code></pre></div>
 </div>
 <div id="hamlet-annotations" class="section level2">
 <h2 class="hasAnchor">
@@ -123,28 +131,28 @@ img {
 <p>The package contains one left and one right facing illustration for 19 different hamlet species and morphotypes. They are made available as <em>grid objects</em> (grob) in the tibble <code>hypo_img</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">hypo_img</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; # A tibble: 22 x 4</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt;    spec           geno  l           r          </span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt; &lt;list&gt;      &lt;list&gt;     </span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;  1 aberrans       H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;  2 atlahua        H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;  3 castroaguirrei H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;  4 chlorurus      H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;  5 ecosur         H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  6 floridae       H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  7 gemma          H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  8 gummigutta     H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  9 guttavarius    H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; 10 indigo         H     &lt;S3: gTree&gt; &lt;S3: gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt;    spec           geno  l       r      </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt; &lt;list&gt;  &lt;list&gt; </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;  1 aberrans       H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;  2 atlahua        H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;  3 castroaguirrei H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;  4 chlorurus      H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;  5 ecosur         H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  6 floridae       H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  7 gemma          H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  8 gummigutta     H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  9 guttavarius    H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; 10 indigo         H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
 <a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; # … with 12 more rows</span></a></code></pre></div>
 <p>A pure version of the hamlet annotations can be added to any ggplot using the the functions <code>hypo_anno_l()</code> and <code>hypo_anno_r()</code>. These functions are simple wrappers around the <strong>ggplot2</strong> function <code>annotation_custom(()</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">3</span>, <span class="fl">3.25</span>, <span class="fl">3.75</span>),<span class="dt">y =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="op">-</span>.<span class="dv">1</span>, <span class="fl">-.3</span>, <span class="fl">.3</span>)),</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">3</span>, <span class="fl">3.25</span>, <span class="fl">3.75</span>),<span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span>.<span class="dv">1</span>, <span class="fl">-.3</span>, <span class="fl">.3</span>)),</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">       <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y))<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">color =</span> <span class="st">"#35B779"</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">hypo_anno_r</span>(<span class="st">'puella'</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> <span class="dv">1</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw">hypo_anno_l</span>(<span class="st">'indigo'</span>, <span class="dt">xmin =</span> <span class="fl">1.5</span>, <span class="dt">xmax =</span> <span class="fl">2.5</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="st">  </span><span class="kw">coord_fixed</span>()<span class="op">+</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">0</span>, <span class="fl">3.75</span>))<span class="op">+</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="op">-</span>.<span class="dv">35</span>, <span class="fl">.35</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>, <span class="fl">3.75</span>))<span class="op">+</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span>.<span class="dv">35</span>, <span class="fl">.35</span>))</a></code></pre></div>
 <p><img src="hypoimg_files/figure-html/pureAnno-1.png" width="95%" height="90%"></p>
 <p>A common task is a contrast different hamlet species in genomic or ecologic terms. Here it might be useful to assign individual colors to the individual hamlet species. The <strong>hypoimg</strong> package provides a way to create a custom legend for such a situation.</p>
 <p>An individual color - species assignment can be shown using the <code>hypo_anno_single()</code> function:</p>
@@ -158,30 +166,30 @@ img {
 <a class="sourceLine" id="cb5-3" data-line-number="3">               <span class="dt">plot_names =</span> <span class="ot">TRUE</span>, <span class="dt">plot_name_size =</span> <span class="dv">5</span>)</a></code></pre></div>
 <p><img src="hypoimg_files/figure-html/pairHypoBlock-1.png" width="95%"></p>
 <p>If several different species are used within one plot a custom legend can be generated based on the species list and the color map using <code>hypo_legend_single()</code>.</p>
-<p>To be able to use this legend the it needs to be transformed into a grob using <code><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggplotGrob">ggplot2::ggplotGrob()</a></code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Random">set.seed</a></span>(<span class="dv">42</span>)</a>
+<p>To be able to use this legend the it needs to be transformed into a grob using <code><a href="https://ggplot2.tidyverse.org/reference/ggplotGrob.html">ggplot2::ggplotGrob()</a></code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">42</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co"># For this demonstration we'll create a fake length - weight reltionship data table.</span></a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co"># To do this, we'll implement the relationship as stated by fishbase for H. puella:</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co"># http://www.fishbase.se/summary/Hypoplectrus-puella.html</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6">hamlet_length_weight &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">a =</span> <span class="fl">0.009</span>, <span class="dt">b =</span> <span class="fl">3.04</span> , <span class="dt">rand =</span> <span class="dv">0</span>){</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">  a <span class="op">*</span><span class="st"> </span>x<span class="op">^</span>b <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(x)) <span class="op">*</span><span class="st"> </span>rand</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">  a <span class="op">*</span><span class="st"> </span>x<span class="op">^</span>b <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(x)) <span class="op">*</span><span class="st"> </span>rand</a>
 <a class="sourceLine" id="cb6-8" data-line-number="8">}</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co"># The species involved in the fake data set</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">hamlet_species &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'nigricans'</span>, <span class="st">'unicolor'</span>, <span class="st">'gemma'</span>)</a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">hamlet_species &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'nigricans'</span>, <span class="st">'unicolor'</span>, <span class="st">'gemma'</span>)</a>
 <a class="sourceLine" id="cb6-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co"># The fake dataset</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">hamlet_data &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">species =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/rep">rep</a></span>(hamlet_species, <span class="dt">each =</span> <span class="dv">10</span>),</a>
-<a class="sourceLine" id="cb6-15" data-line-number="15">                      <span class="dt">len =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/sample">sample</a></span>(<span class="dv">5</span><span class="op">:</span><span class="dv">17</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span> , <span class="dt">size =</span> <span class="dv">30</span>)<span class="op">+</span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(<span class="dv">30</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">weig =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse</a></span>(species <span class="op">==</span><span class="st"> 'nigricans'</span>,</a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">                       <span class="kw">hamlet_length_weight</span>(<span class="dt">x =</span> len, <span class="dt">rand =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(<span class="dv">10</span>),</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18">                       <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse</a></span>(species <span class="op">==</span><span class="st"> 'unicolor'</span>,</a>
+<a class="sourceLine" id="cb6-14" data-line-number="14">hamlet_data &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">species =</span> <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(hamlet_species, <span class="dt">each =</span> <span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">                      <span class="dt">len =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">5</span><span class="op">:</span><span class="dv">17</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span> , <span class="dt">size =</span> <span class="dv">30</span>)<span class="op">+</span><span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="dv">30</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">weig =</span> <span class="kw"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(species <span class="op">==</span><span class="st"> 'nigricans'</span>,</a>
+<a class="sourceLine" id="cb6-17" data-line-number="17">                       <span class="kw">hamlet_length_weight</span>(<span class="dt">x =</span> len, <span class="dt">rand =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb6-18" data-line-number="18">                       <span class="kw"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(species <span class="op">==</span><span class="st"> 'unicolor'</span>,</a>
 <a class="sourceLine" id="cb6-19" data-line-number="19">                              <span class="kw">hamlet_length_weight</span>(<span class="dt">x =</span> len, <span class="dt">b =</span> <span class="fl">3.14</span>,<span class="dt">rand =</span> <span class="fl">1.5</span>),</a>
 <a class="sourceLine" id="cb6-20" data-line-number="20">                              <span class="kw">hamlet_length_weight</span>(<span class="dt">x =</span> len, <span class="dt">b =</span> <span class="fl">2.94</span>,<span class="dt">rand =</span> <span class="fl">1.5</span>))))</a>
 <a class="sourceLine" id="cb6-21" data-line-number="21"></a>
 <a class="sourceLine" id="cb6-22" data-line-number="22"><span class="co"># Our color map</span></a>
-<a class="sourceLine" id="cb6-23" data-line-number="23">clr_single &lt;-<span class="st"> </span>viridis<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/viridis/topics/reexports">viridis</a></span>(<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb6-23" data-line-number="23">clr_single &lt;-<span class="st"> </span>viridis<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/viridis/man/reexports.html">viridis</a></span>(<span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb6-24" data-line-number="24"></a>
 <a class="sourceLine" id="cb6-25" data-line-number="25"><span class="co"># The custom legend is created based on the species list and the color map</span></a>
 <a class="sourceLine" id="cb6-26" data-line-number="26">legend_grob_single &lt;-<span class="st"> </span><span class="kw">hypo_legend_single</span>(<span class="dt">species =</span> hamlet_species, <span class="dt">color_map =</span> clr_single,</a>
@@ -201,24 +209,24 @@ img {
 <p><img src="hypoimg_files/figure-html/singleHypoLegend-1.png" width="85%"></p>
 <p>Similarly, the pair wise elements can be combined into a legend using <code>hypo_legend_pair()</code></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># The species involved in the fake data set</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">left &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"aberrans"</span>, <span class="st">"aberrans"</span>, <span class="st">"chlorurus"</span>)</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">right &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"aberrans"</span>, <span class="st">"chlorurus"</span>,  <span class="st">"chlorurus"</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">left &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"aberrans"</span>, <span class="st">"aberrans"</span>, <span class="st">"chlorurus"</span>)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">right &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"aberrans"</span>, <span class="st">"chlorurus"</span>,  <span class="st">"chlorurus"</span>)</a>
 <a class="sourceLine" id="cb7-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co"># For this demonstration we'll create a fake pairing experiment with egg counts.</span></a>
 <a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co"># this function samples counts for 15 pairings</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7">egg_c &lt;-<span class="st"> </span><span class="cf">function</span>(x){<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/sample">sample</a></span>(x,<span class="dt">size =</span> <span class="dv">15</span>,<span class="dt">replace =</span> <span class="ot">TRUE</span>)}</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">egg_c &lt;-<span class="st"> </span><span class="cf">function</span>(x){<span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(x,<span class="dt">size =</span> <span class="dv">15</span>,<span class="dt">replace =</span> <span class="ot">TRUE</span>)}</a>
 <a class="sourceLine" id="cb7-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co"># The fake dataset</span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10">pairing_data &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">pair =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/rep">rep</a></span>(<span class="kw">str_c</span>(left, right, <span class="dt">sep =</span> <span class="st">"-"</span>),</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">pairing_data &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">pair =</span> <span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="kw">str_c</span>(left, right, <span class="dt">sep =</span> <span class="st">"-"</span>),</a>
 <a class="sourceLine" id="cb7-11" data-line-number="11">                                 <span class="dt">each =</span> <span class="dv">15</span>),</a>
-<a class="sourceLine" id="cb7-12" data-line-number="12">                      <span class="dt">pairing_egg_counts =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="kw">egg_c</span>(<span class="dv">90</span><span class="op">:</span><span class="dv">110</span>),<span class="kw">egg_c</span>(<span class="dv">50</span><span class="op">:</span><span class="dv">95</span>), <span class="kw">egg_c</span>(<span class="dv">60</span><span class="op">:</span><span class="dv">100</span>)),</a>
-<a class="sourceLine" id="cb7-13" data-line-number="13">                      <span class="dt">time_point =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/factor">factor</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/rep">rep</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/rep">rep</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'morning'</span>,<span class="st">'noon'</span>,<span class="st">'evening'</span>),</a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">                      <span class="dt">pairing_egg_counts =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">egg_c</span>(<span class="dv">90</span><span class="op">:</span><span class="dv">110</span>),<span class="kw">egg_c</span>(<span class="dv">50</span><span class="op">:</span><span class="dv">95</span>), <span class="kw">egg_c</span>(<span class="dv">60</span><span class="op">:</span><span class="dv">100</span>)),</a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">                      <span class="dt">time_point =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'morning'</span>,<span class="st">'noon'</span>,<span class="st">'evening'</span>),</a>
 <a class="sourceLine" id="cb7-14" data-line-number="14">                                                 <span class="dt">each=</span><span class="dv">5</span>),</a>
 <a class="sourceLine" id="cb7-15" data-line-number="15">                                             <span class="dv">3</span>),</a>
-<a class="sourceLine" id="cb7-16" data-line-number="16">                                         <span class="dt">levels =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'morning'</span>,<span class="st">'noon'</span>,<span class="st">'evening'</span>)))</a>
+<a class="sourceLine" id="cb7-16" data-line-number="16">                                         <span class="dt">levels =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'morning'</span>,<span class="st">'noon'</span>,<span class="st">'evening'</span>)))</a>
 <a class="sourceLine" id="cb7-17" data-line-number="17"></a>
 <a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co"># Our color map</span></a>
-<a class="sourceLine" id="cb7-19" data-line-number="19">clr_pair &lt;-<span class="st"> </span>RColorBrewer<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/RColorBrewer/topics/ColorBrewer">brewer.pal</a></span>(<span class="dv">3</span>,<span class="st">"RdBu"</span>)</a>
+<a class="sourceLine" id="cb7-19" data-line-number="19">clr_pair &lt;-<span class="st"> </span>RColorBrewer<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span>(<span class="dv">3</span>,<span class="st">"RdBu"</span>)</a>
 <a class="sourceLine" id="cb7-20" data-line-number="20"></a>
 <a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co"># The custom legend is created based on two species lists and the color map</span></a>
 <a class="sourceLine" id="cb7-22" data-line-number="22">legend_grob_pair &lt;-<span class="st"> </span><span class="kw">hypo_legend_pair</span>(<span class="dt">left =</span> left, <span class="dt">right =</span> right,</a>
@@ -235,7 +243,7 @@ img {
 <a class="sourceLine" id="cb7-33" data-line-number="33"><span class="st">  </span><span class="kw">geom_boxplot</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb7-34" data-line-number="34"><span class="st">  </span><span class="kw">annotation_custom</span>(legend_grob_pair,</a>
 <a class="sourceLine" id="cb7-35" data-line-number="35">                    <span class="dt">xmin =</span> <span class="fl">3.25</span>, <span class="dt">ymin =</span> <span class="dv">70</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb7-36" data-line-number="36"><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">xlim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="fl">0.75</span>,<span class="fl">4.6</span>))<span class="op">+</span></a>
+<a class="sourceLine" id="cb7-36" data-line-number="36"><span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">xlim =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0.75</span>,<span class="fl">4.6</span>))<span class="op">+</span></a>
 <a class="sourceLine" id="cb7-37" data-line-number="37"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Time point"</span>,</a>
 <a class="sourceLine" id="cb7-38" data-line-number="38">       <span class="dt">y =</span> <span class="st">"Egg count / pairing (n)"</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb7-39" data-line-number="39"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> clr_pair,<span class="dt">guide =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
@@ -248,18 +256,18 @@ img {
 <p>Besides the hamlet illustrations, the <strong>hypoimg</strong> also provides labels for all countries of the Caribbean and the Golf of Mexico:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">hypo_flag</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; # A tibble: 41 x 2</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt;    geo                    flag       </span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;                  &lt;list&gt;     </span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt;  1 anguilla               &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt;  2 antigua_barbuda        &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt;  3 aruba                  &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;  4 bahamas                &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt;  5 barbados               &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt;  6 belize                 &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt;  7 bermuda                &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt;  8 british_virgin_islands &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt;  9 caribbean              &lt;S3: gTree&gt;</span></a>
-<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt; 10 cayman_islands         &lt;S3: gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt;    geo                    flag   </span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;                  &lt;list&gt; </span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt;  1 anguilla               &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt;  2 antigua_barbuda        &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt;  3 aruba                  &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;  4 bahamas                &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt;  5 barbados               &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt;  6 belize                 &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt;  7 bermuda                &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt;  8 british_virgin_islands &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt;  9 caribbean              &lt;gTree&gt;</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt; 10 cayman_islands         &lt;gTree&gt;</span></a>
 <a class="sourceLine" id="cb8-15" data-line-number="15"><span class="co">#&gt; # … with 31 more rows</span></a></code></pre></div>
 <p>An overview of all the flags can be generated with <code>hypo_flag_palette()</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">hypo_flag_palette</span>()</a></code></pre></div>
@@ -296,17 +304,20 @@ img {
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by Kosmas Hench.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

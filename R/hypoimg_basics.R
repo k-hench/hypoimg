@@ -119,7 +119,11 @@ hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #'
 #' @export
 hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", circle_lwd = .5,
-                             plot_names = FALSE, plot_name_size = 3,font_family = 'sans',xlims = .45,...){
+                             plot_names = FALSE,
+                             plot_name_size = 3,
+                             font_family = 'sans',
+                             xlims = .45,
+                             ylims = .335,...){
   stopifnot(length(species) == 1)
   stopifnot(length(plot_names) == 1)
   stopifnot(is.logical(plot_names))
@@ -132,12 +136,12 @@ hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", 
     ggforce::geom_circle(data= tibble(x = 0, y = 0, r = .28),
                 aes(x0 = x, y0 = y,r = r),
                 fill = circle_fill, color = circle_color, lwd = circle_lwd)+
-    coord_fixed(xlim = c(-1, 1))+
+    coord_fixed(xlim = c(-.5, .5),ylim = c(-.4,.335))+
     theme_void()+
     scale_x_continuous(expand = c(0, 0))+
-    scale_y_continuous(limits = c(-.37, .37 + (.3 * as.numeric(plot_names))))+
+    scale_y_continuous(limits = c(-.4, .35 + (.3 * as.numeric(plot_names))),expand = c(0, 0))+
     annotation_custom(hypo_img$l[[nr_species]],
-                      xmin = -xlims,xmax = xlims,ymin = -Inf, ymax = Inf)
+                      xmin = -xlims,xmax = xlims,ymin = -ylims, ymax = ylims)
 
   if(plot_names){
     names_df <- tibble(name = str_c('italic(',hypo_img$geno[nr_species],'.~',species,')'),
