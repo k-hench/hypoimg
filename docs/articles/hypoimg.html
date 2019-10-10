@@ -144,28 +144,28 @@ img {
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  9 guttavarius    H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
 <a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; 10 indigo         H     &lt;gTree&gt; &lt;gTree&gt;</span></a>
 <a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; # … with 12 more rows</span></a></code></pre></div>
-<p>A pure version of the hamlet annotations can be added to any ggplot using the the functions <code><a href="../reference/hypo_anno_l.html">hypo_anno_l()</a></code> and <code><a href="../reference/hypo_anno_r.html">hypo_anno_r()</a></code>. These functions are simple wrappers around the <strong>ggplot2</strong> function <code>annotation_custom(()</code>.</p>
+<p>A pure version of the hamlet annotations can be added to any ggplot using the the functions <code>hypo_anno_l()</code> and <code>hypo_anno_r()</code>. These functions are simple wrappers around the <strong>ggplot2</strong> function <code>annotation_custom(()</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">3</span>, <span class="fl">3.25</span>, <span class="fl">3.75</span>),<span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span>.<span class="dv">1</span>, <span class="fl">-.3</span>, <span class="fl">.3</span>)),</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">       <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y))<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">color =</span> <span class="st">"#35B779"</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/hypo_anno_r.html">hypo_anno_r</a></span>(<span class="st">'puella'</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> <span class="dv">1</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="../reference/hypo_anno_l.html">hypo_anno_l</a></span>(<span class="st">'indigo'</span>, <span class="dt">xmin =</span> <span class="fl">1.5</span>, <span class="dt">xmax =</span> <span class="fl">2.5</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">hypo_anno_r</span>(<span class="st">'puella'</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> <span class="dv">1</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw">hypo_anno_l</span>(<span class="st">'indigo'</span>, <span class="dt">xmin =</span> <span class="fl">1.5</span>, <span class="dt">xmax =</span> <span class="fl">2.5</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="st">  </span><span class="kw">coord_fixed</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>, <span class="fl">3.75</span>))<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span>.<span class="dv">35</span>, <span class="fl">.35</span>))</a></code></pre></div>
 <p><img src="hypoimg_files/figure-html/pureAnno-1.png" width="95%" height="90%"></p>
 <p>A common task is a contrast different hamlet species in genomic or ecologic terms. Here it might be useful to assign individual colors to the individual hamlet species. The <strong>hypoimg</strong> package provides a way to create a custom legend for such a situation.</p>
-<p>An individual color - species assignment can be shown using the <code><a href="../reference/hypo_anno_single.html">hypo_anno_single()</a></code> function:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="../reference/hypo_anno_single.html">hypo_anno_single</a></span>(<span class="dt">species =</span> <span class="st">'aberrans'</span>,</a>
+<p>An individual color - species assignment can be shown using the <code>hypo_anno_single()</code> function:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">hypo_anno_single</span>(<span class="dt">species =</span> <span class="st">'aberrans'</span>,</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">                 <span class="dt">circle_fill =</span> <span class="st">"#35B779"</span>, <span class="dt">circle_color =</span> <span class="st">'black'</span>,</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">                 <span class="dt">plot_names =</span> <span class="ot">TRUE</span>, <span class="dt">plot_name_size =</span> <span class="dv">5</span>)</a></code></pre></div>
 <p><img src="hypoimg_files/figure-html/singleHypoBlock-1.png" width="95%"></p>
-<p>The same is possible for pairs of species using <code><a href="../reference/hypo_anno_pair.html">hypo_anno_pair()</a></code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="../reference/hypo_anno_pair.html">hypo_anno_pair</a></span>(<span class="dt">left =</span> <span class="st">'ecosur'</span>, <span class="dt">right =</span> <span class="st">'maya'</span>,</a>
+<p>The same is possible for pairs of species using <code>hypo_anno_pair()</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">hypo_anno_pair</span>(<span class="dt">left =</span> <span class="st">'ecosur'</span>, <span class="dt">right =</span> <span class="st">'maya'</span>,</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">               <span class="dt">circle_fill =</span> <span class="st">"#F16913"</span>, <span class="dt">circle_color =</span> <span class="st">'black'</span>,</a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">               <span class="dt">plot_names =</span> <span class="ot">TRUE</span>, <span class="dt">plot_name_size =</span> <span class="dv">5</span>)</a></code></pre></div>
 <p><img src="hypoimg_files/figure-html/pairHypoBlock-1.png" width="95%"></p>
-<p>If several different species are used within one plot a custom legend can be generated based on the species list and the color map using <code><a href="../reference/hypo_legend_single.html">hypo_legend_single()</a></code>.</p>
+<p>If several different species are used within one plot a custom legend can be generated based on the species list and the color map using <code>hypo_legend_single()</code>.</p>
 <p>To be able to use this legend the it needs to be transformed into a grob using <code><a href="https://ggplot2.tidyverse.org/reference/ggplotGrob.html">ggplot2::ggplotGrob()</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"></a>
@@ -192,7 +192,7 @@ img {
 <a class="sourceLine" id="cb6-23" data-line-number="23">clr_single &lt;-<span class="st"> </span>viridis<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/viridis/man/reexports.html">viridis</a></span>(<span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb6-24" data-line-number="24"></a>
 <a class="sourceLine" id="cb6-25" data-line-number="25"><span class="co"># The custom legend is created based on the species list and the color map</span></a>
-<a class="sourceLine" id="cb6-26" data-line-number="26">legend_grob_single &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hypo_legend_single.html">hypo_legend_single</a></span>(<span class="dt">species =</span> hamlet_species, <span class="dt">color_map =</span> clr_single,</a>
+<a class="sourceLine" id="cb6-26" data-line-number="26">legend_grob_single &lt;-<span class="st"> </span><span class="kw">hypo_legend_single</span>(<span class="dt">species =</span> hamlet_species, <span class="dt">color_map =</span> clr_single,</a>
 <a class="sourceLine" id="cb6-27" data-line-number="27">                 <span class="dt">circle_color =</span> <span class="st">'black'</span>, <span class="dt">plot_names =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb6-28" data-line-number="28"><span class="st">  </span><span class="kw">ggplotGrob</span>()</a>
 <a class="sourceLine" id="cb6-29" data-line-number="29"></a>
@@ -207,7 +207,7 @@ img {
 <a class="sourceLine" id="cb6-38" data-line-number="38"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> clr_single, <span class="dt">guide =</span> <span class="ot">FALSE</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb6-39" data-line-number="39"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> clr_single, <span class="dt">guide =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <p><img src="hypoimg_files/figure-html/singleHypoLegend-1.png" width="85%"></p>
-<p>Similarly, the pair wise elements can be combined into a legend using <code><a href="../reference/hypo_legend_pair.html">hypo_legend_pair()</a></code></p>
+<p>Similarly, the pair wise elements can be combined into a legend using <code>hypo_legend_pair()</code></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># The species involved in the fake data set</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">left &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"aberrans"</span>, <span class="st">"aberrans"</span>, <span class="st">"chlorurus"</span>)</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3">right &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"aberrans"</span>, <span class="st">"chlorurus"</span>,  <span class="st">"chlorurus"</span>)</a>
@@ -229,7 +229,7 @@ img {
 <a class="sourceLine" id="cb7-19" data-line-number="19">clr_pair &lt;-<span class="st"> </span>RColorBrewer<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span>(<span class="dv">3</span>,<span class="st">"RdBu"</span>)</a>
 <a class="sourceLine" id="cb7-20" data-line-number="20"></a>
 <a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co"># The custom legend is created based on two species lists and the color map</span></a>
-<a class="sourceLine" id="cb7-22" data-line-number="22">legend_grob_pair &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hypo_legend_pair.html">hypo_legend_pair</a></span>(<span class="dt">left =</span> left, <span class="dt">right =</span> right,</a>
+<a class="sourceLine" id="cb7-22" data-line-number="22">legend_grob_pair &lt;-<span class="st"> </span><span class="kw">hypo_legend_pair</span>(<span class="dt">left =</span> left, <span class="dt">right =</span> right,</a>
 <a class="sourceLine" id="cb7-23" data-line-number="23">                                     <span class="dt">color_map =</span> clr_pair,</a>
 <a class="sourceLine" id="cb7-24" data-line-number="24">                                     <span class="dt">circle_color =</span> <span class="st">'black'</span>,</a>
 <a class="sourceLine" id="cb7-25" data-line-number="25">                                     <span class="dt">plot_names =</span> <span class="ot">TRUE</span>,</a>
@@ -269,16 +269,16 @@ img {
 <a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt;  9 caribbean              &lt;gTree&gt;</span></a>
 <a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt; 10 cayman_islands         &lt;gTree&gt;</span></a>
 <a class="sourceLine" id="cb8-15" data-line-number="15"><span class="co">#&gt; # … with 31 more rows</span></a></code></pre></div>
-<p>An overview of all the flags can be generated with <code><a href="../reference/hypo_flag_palette.html">hypo_flag_palette()</a></code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="../reference/hypo_flag_palette.html">hypo_flag_palette</a></span>()</a></code></pre></div>
+<p>An overview of all the flags can be generated with <code>hypo_flag_palette()</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">hypo_flag_palette</span>()</a></code></pre></div>
 <p><img src="hypoimg_files/figure-html/flagPalette-1.png" width="100%"></p>
 <p>Apart from this there exist one flag version for all of the previously discussed functions:</p>
 <ul>
-<li><code><a href="../reference/hypo_anno_flag.html">hypo_anno_flag()</a></code></li>
-<li><code><a href="../reference/hypo_anno_flag_single.html">hypo_anno_flag_single()</a></code></li>
-<li><code><a href="../reference/hypo_anno_flag_pair.html">hypo_anno_flag_pair()</a></code></li>
-<li><code><a href="../reference/hypo_legend_flag_single.html">hypo_legend_flag_single()</a></code></li>
-<li><code><a href="../reference/hypo_legend_flag_pair.html">hypo_legend_flag_pair()</a></code></li>
+<li><code>hypo_anno_flag()</code></li>
+<li><code>hypo_anno_flag_single()</code></li>
+<li><code>hypo_anno_flag_pair()</code></li>
+<li><code>hypo_legend_flag_single()</code></li>
+<li><code>hypo_legend_flag_pair()</code></li>
 </ul>
 <p><img src="hypoimg_files/figure-html/flagShowRoom-1.png" width="100%"></p>
 <hr>

@@ -121,7 +121,7 @@ img {
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(gridSVG)</a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6">svg_file &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"logo.c.svg"</span>, <span class="dt">package =</span> <span class="st">"hypoimg"</span>)</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">svg &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hypo_read_svg.html">hypo_read_svg</a></span>(svg_file)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">svg &lt;-<span class="st"> </span><span class="kw">hypo_read_svg</span>(svg_file)</a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">ggplot</span>(<span class="kw">tibble</span>(<span class="dt">x=</span><span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="dv">100</span>),<span class="dt">y=</span><span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="dv">100</span>)))<span class="op">+</span></a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="st">  </span><span class="kw">annotation_custom</span>(svg)<span class="op">+</span></a>
@@ -132,21 +132,21 @@ img {
 <div id="recolor-single-layer" class="section level2">
 <h2 class="hasAnchor">
 <a href="#recolor-single-layer" class="anchor"></a>Recolor single layer</h2>
-<p>Individual layers of the image can be recolored using the <code><a href="../reference/hypo_recolor_svg.html">hypo_recolor_svg()</a></code> function:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">svg_new &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hypo_recolor_svg.html">hypo_recolor_svg</a></span>(svg, <span class="dt">layer =</span> <span class="dv">1</span>, <span class="dt">color =</span> <span class="st">"#2B5B99"</span>)</a>
+<p>Individual layers of the image can be recolored using the <code>hypo_recolor_svg()</code> function:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">svg_new &lt;-<span class="st"> </span><span class="kw">hypo_recolor_svg</span>(svg, <span class="dt">layer =</span> <span class="dv">1</span>, <span class="dt">color =</span> <span class="st">"#2B5B99"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">ggplot</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">annotation_custom</span>(svg_new)</a></code></pre></div>
 <p><img src="hypoimg_recolor_svg_files/figure-html/recolorSingle-1.png" width="95%"></p>
 <p>This can be used to create a table of color variants:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">n =<span class="st"> </span><span class="dv">9</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">tab &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hypo_recolor_grob_table.html">hypo_recolor_grob_table</a></span>(svg,</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">tab &lt;-<span class="st"> </span><span class="kw">hypo_recolor_grob_table</span>(svg,</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">                          LETTERS[<span class="dv">1</span><span class="op">:</span>n],</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">                          scico<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/scico/man/scico.html">scico</a></span>(n, <span class="dt">palette =</span> <span class="st">'lapaz'</span>),</a>
 <a class="sourceLine" id="cb4-5" data-line-number="5">                          <span class="dt">angle =</span> <span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(n)<span class="op">*</span><span class="dv">60</span>,</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6">                          <span class="dt">layer =</span> <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb4-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw">ggplot</span>(<span class="kw">tibble</span>(<span class="dt">x=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>),<span class="kw">aes</span>(<span class="dt">x=</span>x,<span class="dt">y=</span>x))<span class="op">+</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="../reference/geom_hypo_grob.html">geom_hypo_grob</a></span>(<span class="dt">data=</span>tab,</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_hypo_grob</span>(<span class="dt">data=</span>tab,</a>
 <a class="sourceLine" id="cb4-10" data-line-number="10">                 <span class="kw">aes</span>(<span class="dt">grob=</span>grob,<span class="dt">x=</span>x,<span class="dt">y=</span>y,</a>
 <a class="sourceLine" id="cb4-11" data-line-number="11">                     <span class="dt">angle=</span>angle),</a>
 <a class="sourceLine" id="cb4-12" data-line-number="12">                 <span class="dt">width=</span>.<span class="dv">6</span>)<span class="op">+</span></a>
@@ -154,18 +154,18 @@ img {
 <a class="sourceLine" id="cb4-14" data-line-number="14"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">text=</span><span class="kw">element_blank</span>(),</a>
 <a class="sourceLine" id="cb4-15" data-line-number="15">        <span class="dt">axis.ticks =</span> <span class="kw">element_blank</span>())</a></code></pre></div>
 <p><img src="hypoimg_recolor_svg_files/figure-html/recolorTable-1.png" width="95%"></p>
-<p>Finally, <code><a href="../reference/hypo_recolor_svg.html">hypo_recolor_svg()</a></code> can be applied multiple times to recolor several layers:</p>
+<p>Finally, <code>hypo_recolor_svg()</code> can be applied multiple times to recolor several layers:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">svg_file_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"logo2.c.svg"</span>, <span class="dt">package =</span> <span class="st">"hypoimg"</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">svg_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw"><a href="../reference/hypo_read_svg.html">hypo_read_svg</a></span>(svg_file_<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">svg_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">hypo_read_svg</span>(svg_file_<span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb5-4" data-line-number="4">clr &lt;-<span class="st"> </span>scico<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/scico/man/scico.html">scico</a></span>(<span class="dv">25</span>)</a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw">ggplot</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6"><span class="st">  </span><span class="kw">annotation_custom</span>(svg_<span class="dv">2</span>,<span class="dt">xmax =</span> <span class="fl">.5</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb5-7" data-line-number="7"><span class="st">  </span><span class="kw">annotation_custom</span>(svg_<span class="dv">2</span> <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="st">                      </span><span class="kw"><a href="../reference/hypo_recolor_svg.html">hypo_recolor_svg</a></span>(.,<span class="dt">layer =</span> <span class="dv">1</span>,clr[<span class="dv">1</span>]) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="st">                      </span><span class="kw"><a href="../reference/hypo_recolor_svg.html">hypo_recolor_svg</a></span>(.,<span class="dt">layer =</span> <span class="dv">2</span>,clr[<span class="dv">8</span>]) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="st">                      </span><span class="kw"><a href="../reference/hypo_recolor_svg.html">hypo_recolor_svg</a></span>(.,<span class="dt">layer =</span> <span class="dv">3</span>,clr[<span class="dv">16</span>]) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="st">                      </span><span class="kw"><a href="../reference/hypo_recolor_svg.html">hypo_recolor_svg</a></span>(.,<span class="dt">layer =</span> <span class="dv">4</span>,clr[<span class="dv">24</span>]),</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="st">                      </span><span class="kw">hypo_recolor_svg</span>(.,<span class="dt">layer =</span> <span class="dv">1</span>,clr[<span class="dv">1</span>]) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="st">                      </span><span class="kw">hypo_recolor_svg</span>(.,<span class="dt">layer =</span> <span class="dv">2</span>,clr[<span class="dv">8</span>]) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="st">                      </span><span class="kw">hypo_recolor_svg</span>(.,<span class="dt">layer =</span> <span class="dv">3</span>,clr[<span class="dv">16</span>]) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="st">                      </span><span class="kw">hypo_recolor_svg</span>(.,<span class="dt">layer =</span> <span class="dv">4</span>,clr[<span class="dv">24</span>]),</a>
 <a class="sourceLine" id="cb5-12" data-line-number="12">                    <span class="dt">xmin =</span> <span class="fl">.5</span>)</a></code></pre></div>
 <p><img src="hypoimg_recolor_svg_files/figure-html/recolorMultiple-1.png" width="95%"></p>
 <hr>
