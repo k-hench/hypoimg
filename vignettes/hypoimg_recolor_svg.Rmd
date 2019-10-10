@@ -100,5 +100,7 @@ ggplot()+
 ---------------------------------
 
 <center>
-<img src = "logo.svg" width = 20% />
+```{r, echo = FALSE,fig.asp = 1, out.height = "150pt", out.width = "150pt"}
+hypoimg:::hypo_logo()
+```
 </center>

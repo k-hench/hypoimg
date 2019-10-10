@@ -547,3 +547,16 @@ hypo_legend_pair_split <- function(left,right,
     return(legend_list)
   }
 }
+
+
+hypo_logo <- function(){
+  svg_file <- system.file("extdata", "logo.c.svg", package = "hypoimg")
+  svg <- hypo_read_svg(svg_file)
+
+  ggplot(tibble(x = 0))+
+    coord_equal(xlim = c(-1.1,1.1))+
+    geom_circle(aes(x0 = x, y0 = x, r = .9),
+                color = rgb(1,1,1,0), fill = '#cccccc')+
+    annotation_custom(svg,xmin = -1,xmax = 1)+
+    theme_void()
+}
