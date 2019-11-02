@@ -19,8 +19,8 @@
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
@@ -44,7 +44,7 @@
 
 <meta property="og:title" content="Creates a table svg color variants — hypo_recolor_grob_table" />
 <meta property="og:description" content="hypo_recolor_grob_table turns a svg obect into a table of color variants." />
-<meta property="og:image" content="/logo.png" />
+<meta property="og:image" content="https://k-hench.github.io/hypoimg/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -77,7 +77,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hypoimg</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1.0</span>
       </span>
     </div>
 
@@ -195,7 +195,7 @@ This table can then be fed <code>into geom_hypo_grob()</code> to annotate
 factes of a ggplot with individual color variants of the svg image.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>geom_hypo_grob</code>,</p></div>
+    <div class='dont-index'><p><code><a href='geom_hypo_grob.html'>geom_hypo_grob</a></code>,</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>svg_tab</span> <span class='kw'>&lt;-</span> <span class='fu'>recolor_grob_table</span>(<span class='no'>svg</span>,<span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>3</span>],<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'red'</span>,<span class='st'>'green'</span>,<span class='st'>'blue'</span>),<span class='kw'>layer</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='error'>Error in recolor_grob_table(svg, LETTERS[1:3], c("red", "green", "blue"),     layer = 1): could not find function "recolor_grob_table"</span></div><div class='input'>
@@ -216,7 +216,7 @@ factes of a ggplot with individual color variants of the svg image.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Kosmas Hench.</p>
+  <p>Developed by <a href='https://k-hench.github.io/kh/'>Kosmas Hench</a>.</p>
 </div>
 
 <div class="pkgdown">

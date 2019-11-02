@@ -1,0 +1,56 @@
+destination: docs
+url: https://k-hench.github.io/hypoimg/
+
+authors:
+  Kosmas Hench:
+    href: https://k-hench.github.io/kh/
+
+template:
+  params:
+    bootswatch: yeti
+
+reference:
+  - title: "Basic hamlet functions"
+    desc: >
+      Core idea of the package.
+    contents:
+      - hypo_anno_l
+      - hypo_anno_r
+      - hypo_anno_single
+      - hypo_anno_pair
+      - hypo_anno_pair_split
+      - hypo_legend_single
+      - hypo_legend_pair
+      - hypo_legend_pair_split
+      - hypo_hamlet_generic
+      - hypo_coral_generic
+  - title: "Basic flagg functions"
+    desc: >
+      Functions dealing with Caribbean flaggs.
+    contents:
+      - hypo_flag_test
+      - hypo_flag_palette
+      - hypo_anno_flag
+      - hypo_anno_flag_single
+      - hypo_anno_flag_pair
+      - hypo_legend_flag_single
+      - hypo_legend_flag_pair
+  - title: "Geom grob functions"
+    desc: >
+      Introducing facettable annotations.
+    contents:
+      - geom_hypo_grob
+  - title: "Image metadata functions"
+    desc: >
+      Writing and reading metadata to/from exported plots.
+    contents:
+      - hypo_save
+      - hypo_show_metadata
+  - title: "Prepacked colors"
+    desc: >
+      Color sets and color functions.
+    contents:
+      - clr2
+      - clr5
+      - clr_darken
+      - clr_lighten

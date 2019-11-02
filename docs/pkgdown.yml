@@ -1,5 +1,11 @@
 pandoc: 2.3.1
 pkgdown: 1.4.1.9000
 pkgdown_sha: 61c3999702966dd75267b98ce905df22521ebd11
-articles: []
+articles:
+  hypoimg: hypoimg.html
+  hypoimg_geom_grob: hypoimg_geom_grob.html
+  hypoimg_recolor_svg: hypoimg_recolor_svg.html
+urls:
+  reference: https://k-hench.github.io/hypoimg//reference
+  article: https://k-hench.github.io/hypoimg//articles
 

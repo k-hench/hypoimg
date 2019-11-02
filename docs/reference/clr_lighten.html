@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>One single flag legend element — hypo_anno_flag_single • hypoimg</title>
+<title>Programmatically lighten colors — clr_lighten • hypoimg</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,8 @@
 
 
 
-<meta property="og:title" content="One single flag legend element — hypo_anno_flag_single" />
-<meta property="og:description" content="hypo_anno_flag_single combines a single flag with a colored circle" />
+<meta property="og:title" content="Programmatically lighten colors — clr_lighten" />
+<meta property="og:description" content="clr_lighten produces a lighter version on given colors." />
 <meta property="og:image" content="https://k-hench.github.io/hypoimg/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -134,88 +134,38 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>One single flag legend element</h1>
-    <small class="dont-index">Source: <a href='https://github.com/k-hench/hypoimg/blob/master/R/hypoimg_flags.R'><code>R/hypoimg_flags.R</code></a></small>
-    <div class="hidden name"><code>hypo_anno_flag_single.Rd</code></div>
+    <h1>Programmatically lighten colors</h1>
+    <small class="dont-index">Source: <a href='https://github.com/k-hench/hypoimg/blob/master/R/hypoimg_generic.R'><code>R/hypoimg_generic.R</code></a></small>
+    <div class="hidden name"><code>clr_lighten.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>hypo_anno_flag_single</code> combines a single flag with a colored circle</p>
+    <p><code>clr_lighten</code> produces a lighter version on given colors.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hypo_anno_flag_single</span>(<span class='no'>geo</span>, <span class='kw'>flag_lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>flag_line_color</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>flag_radius_scale</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>circle_color</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>circle_fill</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
-  <span class='kw'>circle_lwd</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>plot_names</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>plot_name_size</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>font_family</span> <span class='kw'>=</span> <span class='st'>"sans"</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>clr_lighten</span>(<span class='no'>color</span>, <span class='kw'>factor</span> <span class='kw'>=</span> <span class='fl'>0.2</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>geo</th>
-      <td><p>string skalar (manatory), one of the available flag IDs</p></td>
+      <th>factor</th>
+      <td><p>numeric skalar (optional), between 0 and 1, amount of lightening</p></td>
     </tr>
     <tr>
-      <th>flag_lwd</th>
-      <td><p>numeric skalar (optional), line width of the optional
-frame of the flag annotation</p></td>
-    </tr>
-    <tr>
-      <th>flag_line_color</th>
-      <td><p>color skalar (a string, optional), line width of the optional
-frame of the flag annotation</p></td>
-    </tr>
-    <tr>
-      <th>flag_radius_scale</th>
-      <td><p>numeric skalar (optional), scaling of the optional
-flag annotation frames diameter</p></td>
-    </tr>
-    <tr>
-      <th>circle_color</th>
-      <td><p>color skalar (a string, optional), the color of the
-background circle outline</p></td>
-    </tr>
-    <tr>
-      <th>circle_fill</th>
-      <td><p>color skalar (a string, optional), the fill of the
-background circle</p></td>
-    </tr>
-    <tr>
-      <th>circle_lwd</th>
-      <td><p>numeric skalar (optional), the width of the background
-circle outline</p></td>
-    </tr>
-    <tr>
-      <th>plot_names</th>
-      <td><p>logical skalar (optional), should the species label
-be added?</p></td>
-    </tr>
-    <tr>
-      <th>plot_name_size</th>
-      <td><p>numeric skalar (optional), the species label size</p></td>
-    </tr>
-    <tr>
-      <th>font_family</th>
-      <td><p>string skalar (optional), the species label font family</p></td>
+      <th>col</th>
+      <td><p>string (color, mandatory)</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The function <code>hypo_anno_flag_single</code> provides the basic building
-block of the single flag color legend. It combines a single flag
-annotaion with a background circle which can be coloured.</p>
-<p>Aditionally, the flag label can be added to the  plot.</p>
+    <p>Takes a vector of colors and lightens them by a given factor.
+1 returns the input color, 0 returns white</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='hypo_anno_flag_pair.html'>hypo_anno_flag_pair</a></code>,
-  <code><a href='hypo_anno_single.html'>hypo_anno_single</a></code></p></div>
+    <div class='dont-index'><p><code><a href='clr_darken.html'>clr_darken</a></code></p></div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>hypo_anno_flag_single</span>(<span class='kw'>geo</span> <span class='kw'>=</span> <span class='st'>'trinidad_and_tobago'</span>,
-  <span class='kw'>flag_lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>flag_line_color</span> <span class='kw'>=</span> <span class='st'>'black'</span>, <span class='kw'>flag_radius_scale</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>circle_color</span> <span class='kw'>=</span> <span class='st'>'black'</span>, <span class='kw'>circle_lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>plot_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='hypo_anno_flag_single-1.png' alt='' width='700' height='433' /></div><div class='input'>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -223,7 +173,6 @@ annotaion with a background circle which can be coloured.</p>
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

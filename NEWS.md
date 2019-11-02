@@ -1,3 +1,7 @@
+# hypoimg 1.0.1.0
+* adding generic hamlet and coral images.
+* adding color sets and color functions.
+
 # hypoimg 1.0.0.5
 
 * minor bugfix in the hypo_anno_single() y-limits.

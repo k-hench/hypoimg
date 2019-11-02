@@ -1,7 +1,7 @@
 Package: hypoimg
 Type: Package
 Title: Provides Hypoplectrus image annotations
-Version: 1.0.0.5
+Version: 1.0.1.0
 Authors@R: person("Kosmas", "Hench", email="khench@posteo.net", role = c("aut", "cre"),
       comment = c(ORCID = "0000-0003-1119-187X"))
 Description: The hypoimg package provides illustrations to annotate
