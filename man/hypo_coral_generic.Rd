@@ -5,7 +5,8 @@
 \title{Add a generic coral to a ggplot}
 \usage{
 hypo_coral_generic(col = "darkgray", x_in = 0.5, y_in = 0.5,
-  width_in = 1, height_in = 1, face = c("l", "r"), ...)
+  width_in = 1, height_in = 1, coral_side = c("l", "r"),
+  coral_type = c("branch", "table", "brain"), ...)
 }
 \arguments{
 \item{col}{string  (color, optional), defaul = darkgray}
@@ -14,7 +15,9 @@ hypo_coral_generic(col = "darkgray", x_in = 0.5, y_in = 0.5,
 
 \item{height_in}{numeric skalar (optional), width (in graph y axis units)}
 
-\item{face}{string skalar (optional), one of l,r orientation of the coral}
+\item{coral_side}{string skalar (optional), one of (l, r) - orientation of the coral}
+
+\item{coral_type}{string skalar (optional), one of (branch, table, brain) - coral type}
 
 \item{x}{numeric skalar (optional), horizontal center for coral placement}
 

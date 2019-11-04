@@ -41,12 +41,12 @@ Hamlet species labels can optionally be included.
 
 Available species:
   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-  "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+  "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
   "puella", "randallorum", "tan", "unicolor"
 }
 \examples{
-clr <- viridis::inferno(4)
+clr_single <- viridis::inferno(4)
 
 species <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
 

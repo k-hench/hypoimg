@@ -4,6 +4,14 @@
 #'
 #' A vector containg blue and orange.
 #'
+#' @examples
+#' ggplot(tibble( x = 1:2))+
+#'   coord_equal()+
+#'   geom_tile(aes(x = x, y = 1, fill = factor(x)))+
+#'   scale_fill_manual(values = clr2)+
+#'   theme_void()+
+#'   theme(legend.position = 'none')
+#'
 #' @export
 clr2 <-  c('#084082ff','#f0a830ff')
 
@@ -12,6 +20,14 @@ clr2 <-  c('#084082ff','#f0a830ff')
 #' \code{clr5} is a combination of five colors I like.
 #'
 #' This is just a shortcut for RColorBrewer::brewer.pal(5,'Set1').
+#'
+#' @examples
+#' ggplot(tibble( x = 1:5))+
+#'   coord_equal()+
+#'   geom_tile(aes(x = x, y = 1, fill = factor(x)))+
+#'   scale_fill_manual(values = clr5)+
+#'   theme_void()+
+#'   theme(legend.position = 'none')
 #'
 #' @export
 clr5 <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00")
@@ -28,6 +44,14 @@ clr5 <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00")
 #' @param factor numeric skalar (optional), between 0 and 1, amount of darkening
 #'
 #' @seealso \code{\link{clr_lighten}}
+#'
+#' @examples
+#' ggplot(tibble( x = 1:5))+
+#'   coord_equal()+
+#'   geom_tile(aes(x = x, y = 1, fill = factor(x)))+
+#'   scale_fill_manual(values = map_chr((1:5)/5,.f = clr_darken, color = clr2[[2]]))+
+#'   theme_void()+
+#'   theme(legend.position = 'none')
 #'
 #' @export
 clr_darken <- function(color, factor = .5){
@@ -48,6 +72,14 @@ clr_darken <- function(color, factor = .5){
 #' @param factor numeric skalar (optional), between 0 and 1, amount of lightening
 #'
 #' @seealso \code{\link{clr_darken}}
+#'
+#' @examples
+#' ggplot(tibble( x = 1:5))+
+#'   coord_equal()+
+#'   geom_tile(aes(x = x, y = 1, fill = factor(x)))+
+#'   scale_fill_manual(values = map_chr((1:5)/5,.f = clr_lighten, color = clr2[[1]]))+
+#'   theme_void()+
+#'   theme(legend.position = 'none')
 #'
 #' @export
 clr_lighten <- function(color, factor = .2){
@@ -107,7 +139,8 @@ hypo_hamlet_generic <- function(col = 'darkgray',x_in = .5, y_in = .5,
 #' @param y numeric skalar (optional), vertical center for coral placement
 #' @param width_in numeric skalar (optional), width (in graph x axis units)
 #' @param height_in numeric skalar (optional), width (in graph y axis units)
-#' @param face string skalar (optional), one of l,r orientation of the coral
+#' @param coral_side string skalar (optional), one of (l, r) - orientation of the coral
+#' @param coral_type string skalar (optional), one of (branch, table, brain) - coral type
 #'
 #' @seealso \code{\link{hypo_hamlet_generic}}
 #'
@@ -120,8 +153,13 @@ hypo_hamlet_generic <- function(col = 'darkgray',x_in = .5, y_in = .5,
 #' @export
 hypo_coral_generic <- function(col = 'darkgray',x_in = .5, y_in = .5,
                                 width_in = 1, height_in = 1,
-                                face = c('l','r'), ...){
-  annotation_custom(grob = hypo_coral_img$grob[hypo_coral_img$side == face][[1]] %>%
+                               coral_side = c('l','r'),
+                               coral_type = c('branch','table','brain'),
+                               ...){
+  annotation_custom(grob = hypo_coral_img %>%
+                      filter(side == coral_side , type == coral_type) %>%
+                      .$grob %>%
+                      .[[1]] %>%
                       hypo_recolor_svg(color = col),
                     xmin = x_in-.5*width_in,
                     xmax = x_in+.5*width_in,

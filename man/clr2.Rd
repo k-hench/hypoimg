@@ -14,4 +14,13 @@ clr2
 \details{
 A vector containg blue and orange.
 }
+\examples{
+ggplot(tibble( x = 1:2))+
+  coord_equal()+
+  geom_tile(aes(x = x, y = 1, fill = factor(x)))+
+  scale_fill_manual(values = clr2)+
+  theme_void()+
+  theme(legend.position = 'none')
+
+}
 \keyword{datasets}

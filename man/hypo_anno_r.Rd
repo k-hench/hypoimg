@@ -9,7 +9,7 @@ hypo_anno_r(species, xmin = -Inf, xmax = Inf, ymin = -Inf,
 }
 \arguments{
 \item{species}{string skalar (manatory), one of "aberrans","atlahua",
-"castroaguirrei","chlorurus","ecosur","floridae","gemma","gumigutta",
+"castroaguirrei","chlorurus","ecosur","floridae","gemma","gummigutta",
 "guttavarius","indigo","liberte","maculiferus","maya","nigricans",
 "providencianus","puella","randallorum","tan","unicolor"}
 
@@ -32,9 +32,10 @@ function to add a single right facing hamlet to a existring ggplot.
 \examples{
 ggplot(tibble(x = 1, y = 1),
 aes(x = x, y = y))+
-  geom_point()+
-  hypo_anno_l('unicolor', xmax = 1.2, ymax = 1.2)+
-  hypo_anno_r('aberrans', xmin = .8, ymin = .8)
+ geom_point()+
+ hypo_anno_l('unicolor', xmax = 1.2, ymax = 1.2)+
+ hypo_anno_r('aberrans', xmin = .8, ymin = .8)+
+ coord_cartesian(xlim = c(0, 2), ylim = c(0, 2))
 
 }
 \seealso{

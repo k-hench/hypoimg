@@ -13,6 +13,8 @@
 #'
 #' @examples
 #' hypo_flag_test(geo = 'panama')
+#'
+#' @export
 hypo_flag_test <- function(geo){
   nr_geo <- which(hypo_flag$geo == geo)
   ggplot()+
@@ -72,7 +74,8 @@ hypo_flag_palette <- function(x = 1:41){
 #' @examples
 #' ggplot(tibble(x = 1, y = 1), aes(x = x, y = y))+
 #'   geom_point()+
-#'   hypo_anno_flag('mexico', xmax = 1.2, ymax = 1.2)
+#'   hypo_anno_flag('mexico', xmax = 1.2, ymax = 1.2)+
+#'   coord_cartesian(xlim = c(0, 2), ylim = c(0, 2))
 #'
 #' @export
 hypo_anno_flag <- function(geo, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf,...){

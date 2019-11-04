@@ -46,7 +46,7 @@ Aditionally, the species labels can be added to the  plot.
 
 Available species:
   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-  "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+  "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
   "puella", "randallorum", "tan", "unicolor"
 }

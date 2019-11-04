@@ -18,6 +18,15 @@ clr_lighten(color, factor = 0.2)
 Takes a vector of colors and lightens them by a given factor.
 1 returns the input color, 0 returns white
 }
+\examples{
+ggplot(tibble( x = 1:5))+
+  coord_equal()+
+  geom_tile(aes(x = x, y = 1, fill = factor(x)))+
+  scale_fill_manual(values = map_chr((1:5)/5,.f = clr_lighten, color = clr2[[1]]))+
+  theme_void()+
+  theme(legend.position = 'none')
+
+}
 \seealso{
 \code{\link{clr_darken}}
 }

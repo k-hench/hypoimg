@@ -14,7 +14,7 @@
 #' function to add a single left facing hamlet to an existring ggplot.
 #'
 #' @param species string skalar (manatory), one of "aberrans","atlahua",
-#'   "castroaguirrei","chlorurus","ecosur","floridae","gemma","gumigutta",
+#'   "castroaguirrei","chlorurus","ecosur","floridae","gemma","gummigutta",
 #'   "guttavarius","indigo","liberte","maculiferus","maya","nigricans",
 #'   "providencianus","puella","randallorum","tan","unicolor"
 #' @param xmin numeric skalar (optional), left boundary of the annotation
@@ -28,9 +28,10 @@
 #' @examples
 #' ggplot(tibble(x = 1, y = 1),
 #' aes(x = x, y = y))+
-#'   geom_point()+
-#'   hypo_anno_l('unicolor', xmax = 1.2, ymax = 1.2)+
-#'   hypo_anno_r('aberrans', xmin = .8, ymin = .8)
+#'    geom_point()+
+#'    hypo_anno_l('unicolor', xmax = 1.2, ymax = 1.2)+
+#'    hypo_anno_r('aberrans', xmin = .8, ymin = .8)+
+#'    coord_cartesian(xlim = c(0, 2), ylim = c(0, 2))
 #'
 #' @export
 hypo_anno_l <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf){
@@ -52,7 +53,7 @@ hypo_anno_l <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #' function to add a single right facing hamlet to a existring ggplot.
 #'
 #' @param species string skalar (manatory), one of "aberrans","atlahua",
-#'   "castroaguirrei","chlorurus","ecosur","floridae","gemma","gumigutta",
+#'   "castroaguirrei","chlorurus","ecosur","floridae","gemma","gummigutta",
 #'   "guttavarius","indigo","liberte","maculiferus","maya","nigricans",
 #'   "providencianus","puella","randallorum","tan","unicolor"
 #' @param xmin numeric skalar (optional), left boundary of the annotation
@@ -66,9 +67,10 @@ hypo_anno_l <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #' @examples
 #' ggplot(tibble(x = 1, y = 1),
 #' aes(x = x, y = y))+
-#'   geom_point()+
-#'   hypo_anno_l('unicolor', xmax = 1.2, ymax = 1.2)+
-#'   hypo_anno_r('aberrans', xmin = .8, ymin = .8)
+#'  geom_point()+
+#'  hypo_anno_l('unicolor', xmax = 1.2, ymax = 1.2)+
+#'  hypo_anno_r('aberrans', xmin = .8, ymin = .8)+
+#'  coord_cartesian(xlim = c(0, 2), ylim = c(0, 2))
 #'
 #' @export
 hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf,...){
@@ -93,7 +95,7 @@ hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #'
 #' Available species:
 #'   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-#'   "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+#'   "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
@@ -169,7 +171,7 @@ hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", 
 #'
 #' Available species:
 #'   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-#'   "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+#'   "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
@@ -248,7 +250,7 @@ hypo_anno_pair <- function(left, right, circle_color = NA, circle_fill = "white"
 #'
 #' Available species:
 #'   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-#'   "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+#'   "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
@@ -333,7 +335,7 @@ hypo_anno_pair_split <- function(left, right, circle_color = NA, circle_fill_lef
 #'
 #' Available species:
 #'   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-#'   "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+#'   "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
@@ -355,7 +357,7 @@ hypo_anno_pair_split <- function(left, right, circle_color = NA, circle_fill_lef
 #'   \code{\link{hypo_legend_flag_single}}
 #'
 #' @examples
-#' clr <- viridis::inferno(4)
+#' clr_single <- viridis::inferno(4)
 #'
 #' species <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
 #'
@@ -404,7 +406,7 @@ hypo_legend_single <- function(species,color_map,
 #'
 #' Available species:
 #'   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-#'   "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+#'   "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
@@ -427,13 +429,13 @@ hypo_legend_single <- function(species,color_map,
 #'   \code{\link{hypo_legend_flag_pair}}
 #'
 #' @examples
-#' clr <- viridis::viridis(4)
-#'
-#' left <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
-#' right <- c('guttavarius', 'gumigutta', 'atlahua', 'randallorum')
-#'
-#' hypo_legend_pair(left= left, right = right, color_map = clr,
-#'   circle_color = 'black', plot_names = TRUE)
+# clr <- viridis::viridis(4)
+#
+# left <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
+# right <- c('guttavarius', 'gummigutta', 'atlahua', 'randallorum')
+#
+# hypo_legend_pair(left= left, right = right, color_map = clr,
+#   circle_color = 'black', plot_names = TRUE)
 #' @export
 hypo_legend_pair <- function(left,right,color_map,
                              circle_color = NA, circle_lwd = .5,
@@ -478,7 +480,7 @@ hypo_legend_pair <- function(left,right,color_map,
 #'
 #' Available species:
 #'   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-#'   "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+#'   "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
@@ -506,7 +508,7 @@ hypo_legend_pair <- function(left,right,color_map,
 #' clr <- viridis::viridis(4)
 #'
 #' left <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
-#' right <- c('guttavarius', 'gumigutta', 'atlahua', 'randallorum')
+#' right <- c('guttavarius', 'gummigutta', 'atlahua', 'randallorum')
 #'
 #' hypo_legend_pair(left= left, right = right, color_map = clr,
 #'   circle_color = 'black', plot_names = TRUE)

@@ -43,18 +43,9 @@ Hamlet species labels can optionally be included.
 
 Available species:
   "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-  "floridae", "gemma", "gumigutta", "guttavarius", "indigo",
+  "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
   "puella", "randallorum", "tan", "unicolor"
-}
-\examples{
-clr <- viridis::viridis(4)
-
-left <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
-right <- c('guttavarius', 'gumigutta', 'atlahua', 'randallorum')
-
-hypo_legend_pair(left= left, right = right, color_map = clr,
-  circle_color = 'black', plot_names = TRUE)
 }
 \seealso{
 \code{\link{hypo_legend_single}},

@@ -1,4 +1,9 @@
+# hypoimg 1.0.1.1
+
+* adding more coral types.
+
 # hypoimg 1.0.1.0
+
 * adding generic hamlet and coral images.
 * adding color sets and color functions.
 

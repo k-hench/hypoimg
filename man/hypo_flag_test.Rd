@@ -22,4 +22,5 @@ in other functions)
 }
 \examples{
 hypo_flag_test(geo = 'panama')
+
 }

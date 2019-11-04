@@ -14,4 +14,13 @@ clr5
 \details{
 This is just a shortcut for RColorBrewer::brewer.pal(5,'Set1').
 }
+\examples{
+ggplot(tibble( x = 1:5))+
+  coord_equal()+
+  geom_tile(aes(x = x, y = 1, fill = factor(x)))+
+  scale_fill_manual(values = clr5)+
+  theme_void()+
+  theme(legend.position = 'none')
+
+}
 \keyword{datasets}
