@@ -171,12 +171,13 @@ to be installed and located within the $PATH.</p>
     <div class='dont-index'><p><code><a href='hypo_save.html'>hypo_save</a></code>,</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>tibble</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>20</span><span class='op'>)</span>,y<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>20</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span><span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='img'><img src='hypo_show_metadata-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='fu'><a href='hypo_save.html'>hypo_save</a></span><span class='op'>(</span><span class='st'>'~/Desktop/test_plot.png'</span>,comment <span class='op'>=</span> <span class='st'>'Created by script test.R'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Saving 6.67 x 6.67 in image</span></div><div class='output co'>#&gt; <span class='message'>────────────────────────────────────────────── <span style='color: #00BB00;'>▶ ▶ ▶  ~/Desktop/test_plot.png</span><span> ──</span></div><div class='output co'>#&gt; <span class='warning'>Warning: error in running command</span></div><div class='input'><span class='fu'>hypo_show_metadata</span><span class='op'>(</span><span class='st'>'~/Desktop/test_plot.png'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; character(0)</div></span></pre>
+    <pre class="examples"><div class='input'><span class='co'># only works with exiftools installed - commented out for build</span>
+<span class='co'># tibble(x = rnorm(20),y= rnorm(20)) %&gt;%</span>
+<span class='co'>#   ggplot(aes(x,y))+geom_point()</span>
+<span class='co'>#</span>
+<span class='co'># hypo_save('~/Desktop/test_plot.png',comment = 'Created by script test.R')</span>
+<span class='co'># hypo_show_metadata('~/Desktop/test_plot.png')</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
