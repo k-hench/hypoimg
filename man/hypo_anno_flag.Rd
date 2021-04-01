@@ -4,8 +4,7 @@
 \alias{hypo_anno_flag}
 \title{Add a flag to a ggplot}
 \usage{
-hypo_anno_flag(geo, xmin = -Inf, xmax = Inf, ymin = -Inf,
-  ymax = Inf, ...)
+hypo_anno_flag(geo, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, ...)
 }
 \arguments{
 \item{geo}{string skalar (manatory), one of the available flag IDs}
@@ -17,6 +16,8 @@ hypo_anno_flag(geo, xmin = -Inf, xmax = Inf, ymin = -Inf,
 \item{ymin}{numeric skalar (optional), lower boundary of the annotation}
 
 \item{ymax}{numeric skalar (optional), upper boundary of the annotation}
+
+\item{...}{catch all parameter to allow excess parameter through purrr::pmap}
 }
 \description{
 \code{hypo_anno_flag} adds a left facing hamlet annotation to a ggplot.
@@ -36,6 +37,6 @@ ggplot(tibble(x = 1, y = 1), aes(x = x, y = y))+
 }
 \seealso{
 \code{\link{hypo_flag_palette}},
-  \code{\link{hypo_anno_l}},
-  \code{\link{hypo_anno_r}}
+\code{\link{hypo_anno_l}},
+\code{\link{hypo_anno_r}}
 }

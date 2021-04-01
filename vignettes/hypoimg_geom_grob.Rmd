@@ -2,7 +2,7 @@
 title: "geom_grob()"
 output: rmarkdown::html_vignette
 vignette:  >
-  %\VignetteIndexEntry{hypoimg intro}
+  %\VignetteIndexEntry{geom_grob()}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options:
@@ -18,21 +18,25 @@ img {
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  dev = "ragg_png"
 )
 
+options(warn = - 1)  # suppress warnings in grid due to rotated grobs (for successful vignette building)
+
+library("ragg")
 library("hypoimg")
 ```
 
 The **hypoimg** package implements a new geom: `geom_hypo_grob()`.
 
 This geom provides a possibility to distribute grobs over different facets of a ggplot.
-It needs a tibble that organizes the grobs according to the facetting levels.
+It needs a tibble that organizes the grobs according to the faceting levels.
 
-This geom builds heavily on the answer by baptiste on the tidiverse github forum [issue 1399](https://github.com/tidyverse/ggplot2/issues/1399).
+This geom builds heavily on the answer by baptiste on the tidyverse github forum [issue 1399](https://github.com/tidyverse/ggplot2/issues/1399).
 To the original answer, only the parameters height, width and angle have been added.
 
-```{r geomGrob, out.width = "100%", fig.width = 11, fig.height = 6, warning = FALSE}
+```{r geomGrob, out.width = "100%", fig.width = 11, fig.height = 6}
 # Our color map
 clr <- c(RColorBrewer::brewer.pal(5,'Oranges')[3],
          RColorBrewer::brewer.pal(5,'Blues')[5])
@@ -61,23 +65,22 @@ test_df <- tibble(x = rep(1:10, 2),
 # Using geom_hypo_grob() to distribute the grobs
 ggplot()+
   facet_grid(RUN~.)+
-  geom_hypo_grob(data=grob_list,
-                 aes(grob=grob,angle=angle,height=height),
-                 inherit.aes = FALSE, x = .85, y=0.5)+
+  geom_hypo_grob(data = grob_list,
+                 aes(grob = grob, angle = angle, height = height),
+                 inherit.aes = FALSE, x = .85, y = 0.5)+
   geom_line(data = test_df,
-            aes(x=x,y=y,color=RUN),size=2)+
+            aes(x = x, y = y, color = RUN), size = 2)+
   geom_point(data = test_df,
-             aes(x=x,y=y,fill=RUN),shape=21,size=4)+
-  scale_x_continuous(expand=c(0,0),limits = c(0,14))+
+             aes(x = x, y = y, fill = RUN), shape = 21, size = 4)+
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 14))+
   scale_fill_manual(values = clr)+
   scale_color_manual(values = clr)+
   theme(legend.position = 'bottom')
+
 ```
 
 ---------------------------------
 
-<center>
-```{r, echo = FALSE,fig.asp = 1, out.height = "150pt", out.width = "150pt"}
-hypoimg:::hypo_logo()
+```{r, echo = FALSE, fig.asp = 1, out.height = "150pt", out.width = "150pt", fig.align = "center"}
+knitr::include_graphics("logo.svg")
 ```
-</center>

@@ -36,11 +36,10 @@ hypo_flag_test <- function(geo){
 #' to the Caribbean and the Golf of Mexico.
 #' The function \code{hypo_flag_palette} displays all available flags as well
 #' as their name (to be used in other hypo_flag* functions, note that line breaks
-#' in the country names need to be replaced with an undercore if used as ID
+#' in the country names need to be replaced with an underscore if used as ID
 #' in other functions)
 #'
-#' @param species interger vector (optional, elements >= 1 & <= 41), subselect
-#'   flags to be displayed
+#' @param x integer vector, indices of flags to display
 #'
 #' @examples
 #' hypo_flag_palette()
@@ -66,6 +65,7 @@ hypo_flag_palette <- function(x = 1:41){
 #' @param xmax numeric skalar (optional), right boundary of the annotation
 #' @param ymin numeric skalar (optional), lower boundary of the annotation
 #' @param ymax numeric skalar (optional), upper boundary of the annotation
+#' @param ...  catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_flag_palette}},
 #'   \code{\link{hypo_anno_l}},
@@ -116,6 +116,7 @@ hypo_anno_flag <- function(geo, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf
 #'   be added?
 #' @param plot_name_size numeric skalar (optional), the species label size
 #' @param font_family string skalar (optional), the species label font family
+#' @param ... catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_anno_flag_pair}},
 #'   \code{\link{hypo_anno_single}}
@@ -193,6 +194,7 @@ hypo_anno_flag_single <- function(geo, flag_lwd = 1, flag_line_color = NA, flag_
 #'   be added?
 #' @param plot_name_size numeric skalar (optional), the species label size
 #' @param font_family string skalar (optional), the species label font family
+#' @param ... catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_anno_flag_single}},
 #'   \code{\link{hypo_anno_pair}}

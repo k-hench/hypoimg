@@ -1,5 +1,5 @@
 ---
-title: "The hypoimg package"
+title: "hypoimg intro"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{hypoimg intro}
@@ -18,9 +18,11 @@ img {
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  dev = "ragg_png"
 )
 
+library("ragg")
 library("hypoimg")
 ```
 
@@ -34,10 +36,11 @@ Additionally to this package, resources for the analysis of genomic data of haml
 
 ## Installation
 
-Using the **devtools** package, **hypoinmg** can be installed directly from github:
+Using the **remotes** package, **hypoimg** can be installed directly from github:
 
 ```{r install, eval = FALSE}
-devtools::install_github("k-hench/hypoimg")
+install.packages("remotes")
+remotes::install_github("k-hench/hypoimg")
 ```
 
 ## Hamlet annotations
@@ -249,8 +252,6 @@ cowplot::plot_grid(p1, p2, p3, nrow = 1)
 
 ---------------------------------
 
-<center>
-```{r, echo = FALSE,fig.asp = 1, out.height = "150pt", out.width = "150pt"}
-hypoimg:::hypo_logo()
+```{r, echo = FALSE, fig.asp = 1, out.height = "150pt", out.width = "150pt", fig.align = "center"}
+knitr::include_graphics("logo.svg")
 ```
-</center>

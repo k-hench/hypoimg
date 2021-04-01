@@ -35,13 +35,15 @@ clr5 <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00")
 
 #' Programmatically darken colors
 #'
+#' superseded: Please use `prismatic::clr_darken()` instead
+#'
 #' \code{clr_darken} produces a darker version on given colors.
 #'
 #' Takes a vector of colors and darkens them by a given factor.
 #' 1 returns the input color, 0 returns black.
 #'
-#' @param col string (color, mandatory)
-#' @param factor numeric skalar (optional), between 0 and 1, amount of darkening
+#' @param color string (color, mandatory)
+#' @param factor numeric scalar (optional), between 0 and 1, amount of darkening
 #'
 #' @seealso \code{\link{clr_lighten}}
 #'
@@ -65,11 +67,13 @@ clr_darken <- function(color, factor = .5){
 #'
 #' \code{clr_lighten} produces a lighter version on given colors.
 #'
+#' superseded: Please use `prismatic::clr_lighten()` instead
+#'
 #' Takes a vector of colors and lightens them by a given factor.
 #' 1 returns the input color, 0 returns white
 #'
-#' @param col string (color, mandatory)
-#' @param factor numeric skalar (optional), between 0 and 1, amount of lightening
+#' @param color string (color, mandatory)
+#' @param factor numeric scalar (optional), between 0 and 1, amount of lightening
 #'
 #' @seealso \code{\link{clr_darken}}
 #'
@@ -98,11 +102,12 @@ clr_lighten <- function(color, factor = .2){
 #' the coloration of the generic hamlet.
 #'
 #' @param col string  (color, optional), defaul = darkgray
-#' @param x numeric skalar (optional), horizontal center for hamlet placement
-#' @param y numeric skalar (optional), vertical center for hamlet placement
-#' @param width_in numeric skalar (optional), width (in graph x axis units)
-#' @param height_in numeric skalar (optional), width (in graph y axis units)
-#' @param face string skalar (optional), one of l,r side the hamlet is facing
+#' @param width_in numeric scalar (optional), width (in graph x axis units)
+#' @param height_in numeric scalar (optional), width (in graph y axis units)
+#' @param face string scalar (optional), one of l,r side the hamlet is facing
+#' @param x_in horizontal position
+#' @param y_in vertical position
+#' @param ... catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_coral_generic}}
 #'
@@ -135,12 +140,13 @@ hypo_hamlet_generic <- function(col = 'darkgray',x_in = .5, y_in = .5,
 #' the coloration of the coral.
 #'
 #' @param col string  (color, optional), defaul = darkgray
-#' @param x numeric skalar (optional), horizontal center for coral placement
-#' @param y numeric skalar (optional), vertical center for coral placement
-#' @param width_in numeric skalar (optional), width (in graph x axis units)
-#' @param height_in numeric skalar (optional), width (in graph y axis units)
-#' @param coral_side string skalar (optional), one of (l, r) - orientation of the coral
-#' @param coral_type string skalar (optional), one of (branch, table, brain) - coral type
+#' @param width_in numeric scalar (optional), width (in graph x axis units)
+#' @param height_in numeric scalar (optional), width (in graph y axis units)
+#' @param coral_side string scalar (optional), one of (l, r) - orientation of the coral
+#' @param coral_type string scalar (optional), one of (branch, table, brain) - coral type
+#' @param x_in horizontal position
+#' @param y_in vertical position
+#' @param ... catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_hamlet_generic}}
 #'

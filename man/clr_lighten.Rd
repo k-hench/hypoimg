@@ -7,14 +7,16 @@
 clr_lighten(color, factor = 0.2)
 }
 \arguments{
-\item{factor}{numeric skalar (optional), between 0 and 1, amount of lightening}
+\item{color}{string (color, mandatory)}
 
-\item{col}{string (color, mandatory)}
+\item{factor}{numeric scalar (optional), between 0 and 1, amount of lightening}
 }
 \description{
 \code{clr_lighten} produces a lighter version on given colors.
 }
 \details{
+superseded: Please use \code{prismatic::clr_lighten()} instead
+
 Takes a vector of colors and lightens them by a given factor.
 1 returns the input color, 0 returns white
 }

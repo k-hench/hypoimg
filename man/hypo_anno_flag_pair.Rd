@@ -4,10 +4,20 @@
 \alias{hypo_anno_flag_pair}
 \title{One paired flag legend element}
 \usage{
-hypo_anno_flag_pair(left, right, flag_lwd = 1, flag_line_color = NA,
-  flag_radius_scale = 1, circle_color = NA, circle_fill = "white",
-  circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", ...)
+hypo_anno_flag_pair(
+  left,
+  right,
+  flag_lwd = 1,
+  flag_line_color = NA,
+  flag_radius_scale = 1,
+  circle_color = NA,
+  circle_fill = "white",
+  circle_lwd = 0.5,
+  plot_names = FALSE,
+  plot_name_size = 3,
+  font_family = "sans",
+  ...
+)
 }
 \arguments{
 \item{left}{string skalar (manatory), one of the available flags}
@@ -38,6 +48,8 @@ be added?}
 \item{plot_name_size}{numeric skalar (optional), the species label size}
 
 \item{font_family}{string skalar (optional), the species label font family}
+
+\item{...}{catch all parameter to allow excess parameter through purrr::pmap}
 }
 \description{
 \code{hypo_anno_flag_pair} combines a paired flag with a colored circle
@@ -58,5 +70,5 @@ hypo_anno_flag_pair(left= 'belize', right = 'panama',
 }
 \seealso{
 \code{\link{hypo_anno_flag_single}},
-  \code{\link{hypo_anno_pair}}
+\code{\link{hypo_anno_pair}}
 }

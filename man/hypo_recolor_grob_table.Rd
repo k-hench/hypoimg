@@ -4,9 +4,17 @@
 \alias{hypo_recolor_grob_table}
 \title{Creates a table svg color variants}
 \usage{
-hypo_recolor_grob_table(svg, layer = 1, levels, colormap, x = rep(0.5,
-  length(levels)), y = rep(0.5, length(levels)), angle = rep(0,
-  length(levels)), width = 1, height = 1)
+hypo_recolor_grob_table(
+  svg,
+  layer = 1,
+  levels,
+  colormap,
+  x = rep(0.5, length(levels)),
+  y = rep(0.5, length(levels)),
+  angle = rep(0, length(levels)),
+  width = 1,
+  height = 1
+)
 }
 \arguments{
 \item{svg}{svg object (manatory), the svg object}
@@ -36,7 +44,13 @@ This table can then be fed \code{into geom_hypo_grob()} to annotate
 factes of a ggplot with individual color variants of the svg image.
 }
 \examples{
-svg_tab <- recolor_grob_table(svg,LETTERS[1:3],c('red','green','blue'),layer = 1)
+svg_file <- system.file("extdata", "logo.c.svg", package = "hypoimg")
+svg <- hypo_read_svg(svg_file)
+svg_tab <- hypo_recolor_grob_table(svg,LETTERS[1:3], c('red', 'green', 'blue'), layer = 1)
+ggplot() +
+ geom_hypo_grob(data = svg_tab,
+  aes(x =x, y = y, grob = grob)) +
+  facet_wrap(grp ~ .)
 
 }
 \seealso{

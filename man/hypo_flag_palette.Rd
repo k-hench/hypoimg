@@ -7,8 +7,7 @@
 hypo_flag_palette(x = 1:41)
 }
 \arguments{
-\item{species}{interger vector (optional, elements >= 1 & <= 41), subselect
-flags to be displayed}
+\item{x}{integer vector, indices of flags to display}
 }
 \description{
 \code{hypo_flag_palette} displays all available flags.
@@ -18,7 +17,7 @@ Hypogen comes with a set of illustrations of flags of the countries adjacent
 to the Caribbean and the Golf of Mexico.
 The function \code{hypo_flag_palette} displays all available flags as well
 as their name (to be used in other hypo_flag* functions, note that line breaks
-in the country names need to be replaced with an undercore if used as ID
+in the country names need to be replaced with an underscore if used as ID
 in other functions)
 }
 \examples{

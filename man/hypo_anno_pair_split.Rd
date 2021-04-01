@@ -4,34 +4,44 @@
 \alias{hypo_anno_pair_split}
 \title{One paired hamlet legend element with two fills}
 \usage{
-hypo_anno_pair_split(left, right, circle_color = NA,
-  circle_fill_left = "white", circle_fill_right = "lightgray",
-  circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", ...)
+hypo_anno_pair_split(
+  left,
+  right,
+  circle_color = NA,
+  circle_fill_left = "white",
+  circle_fill_right = "lightgray",
+  circle_lwd = 0.5,
+  plot_names = FALSE,
+  plot_name_size = 3,
+  font_family = "sans",
+  ...
+)
 }
 \arguments{
-\item{left}{string skalar (manatory), one of the available species}
+\item{left}{string scalar (manatory), one of the available species}
 
-\item{right}{string skalar (manatory), one of the available species}
+\item{right}{string scalar (manatory), one of the available species}
 
-\item{circle_color}{color skalar (a string, optional), the color of the
+\item{circle_color}{color scalar (a string, optional), the color of the
 background circle outline}
 
-\item{circle_fill_left}{color skalar (a string, optional), the fill of the
+\item{circle_fill_left}{color scalar (a string, optional), the fill of the
 left background}
 
-\item{circle_fill_right}{color skalar (a string, optional), the fill of the
+\item{circle_fill_right}{color scalar (a string, optional), the fill of the
 right background}
 
-\item{circle_lwd}{numeric skalar (optional), the width of the background
+\item{circle_lwd}{numeric scalar (optional), the width of the background
 circle outline}
 
-\item{plot_names}{logical skalar (optional), should the species labels
+\item{plot_names}{logical scalar (optional), should the species labels
 be added?}
 
-\item{plot_name_size}{numeric skalar (optional), the species label size}
+\item{plot_name_size}{numeric scalar (optional), the species label size}
 
-\item{font_family}{string skalar (optional), the species label font family}
+\item{font_family}{string scalar (optional), the species label font family}
+
+\item{...}{catch all parameter to allow excess parameter through purrr::pmap}
 }
 \description{
 \code{hypo_anno_pair_split} combines a paired hamlet with a two-colored circle
@@ -45,10 +55,10 @@ the two species.
 Aditionally, the species labels can be added to the  plot.
 
 Available species:
-  "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-  "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
-  "liberte", "maculiferus", "maya", "nigricans", "providencianus",
-  "puella", "randallorum", "tan", "unicolor"
+"aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
+"floridae", "gemma", "gummigutta", "guttavarius", "indigo",
+"liberte", "maculiferus", "maya", "nigricans", "providencianus",
+"puella", "randallorum", "tan", "unicolor"
 }
 \examples{
 hypo_anno_pair_split(left = 'puella', right = 'indigo',
@@ -57,5 +67,5 @@ hypo_anno_pair_split(left = 'puella', right = 'indigo',
 }
 \seealso{
 \code{\link{hypo_anno_single}},
-  \code{\link{hypo_anno_flag_pair}}
+\code{\link{hypo_anno_flag_pair}}
 }

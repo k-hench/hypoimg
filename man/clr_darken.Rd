@@ -7,14 +7,16 @@
 clr_darken(color, factor = 0.5)
 }
 \arguments{
-\item{factor}{numeric skalar (optional), between 0 and 1, amount of darkening}
+\item{color}{string (color, mandatory)}
 
-\item{col}{string (color, mandatory)}
+\item{factor}{numeric scalar (optional), between 0 and 1, amount of darkening}
 }
 \description{
-\code{clr_darken} produces a darker version on given colors.
+superseded: Please use \code{prismatic::clr_darken()} instead
 }
 \details{
+\code{clr_darken} produces a darker version on given colors.
+
 Takes a vector of colors and darkens them by a given factor.
 1 returns the input color, 0 returns black.
 }

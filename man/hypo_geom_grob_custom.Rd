@@ -4,7 +4,9 @@
 \name{hypo_geom_grob_custom}
 \alias{hypo_geom_grob_custom}
 \title{The custom grob geom}
-\format{An object of class \code{hypo_geom_grob_custom} (inherits from \code{Geom}, \code{ggproto}, \code{gg}) of length 5.}
+\format{
+An object of class \code{hypo_geom_grob_custom} (inherits from \code{Geom}, \code{ggproto}, \code{gg}) of length 5.
+}
 \usage{
 hypo_geom_grob_custom
 }

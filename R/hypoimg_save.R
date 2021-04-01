@@ -15,8 +15,9 @@
 #'
 #' @param filename File name to create on disk.
 #' @param plot Plot to save, defaults to last plot displayed.
-#' @param comment string skalar,comment to add to the figure metadata.
+#' @param comment string scalar,comment to add to the figure metadata.
 #' @param ... Other arguments passed on to the \code{ggsave()} function.
+#'
 #' @seealso \code{\link{hypo_show_metadata}},
 #' @export
 #' @examples
@@ -27,8 +28,6 @@
 #' hypo_show_metadata('~/Desktop/test_plot.png')
 #'
 hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hypoimg::hypo_save()', ...){
-  require(tidyverse)
-
   file_type <- filename %>% str_sub(.,start = -3,end = -1)
 
   ggsave(filename = filename, plot = plot, ...)
@@ -60,6 +59,7 @@ hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hyp
 #' See https://www.sno.phy.queensu.ca/~phil/exiftool/index.html
 #'
 #' @param filename File name to create on disk.
+#'
 #' @seealso \code{\link{hypo_save}},
 #' @export
 #' @examples

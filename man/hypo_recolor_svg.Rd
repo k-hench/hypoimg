@@ -23,6 +23,7 @@ The svg needs to be read in by hypo_read_svg.
 \examples{
 svg_file <- system.file("extdata", "logo.c.svg", package = "hypoimg")
 svg <- hypo_read_svg(svg_file)
-svg_new <- hypo_recolor_svg(svg,color = 'red')
+svg_new <- hypo_recolor_svg(svg, color = 'red')
+ggplot() + annotation_custom(grob = svg_new)
 
 }

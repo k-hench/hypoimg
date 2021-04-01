@@ -2,7 +2,7 @@
 title: "Recolor svg files"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{hypoimg_recolor_svg}
+  %\VignetteIndexEntry{Recolor svg files}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options:
@@ -18,9 +18,13 @@ img {
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  dev = "ragg_png"
 )
 
+options(warn = - 1) # suppress warnings in grid due to rotated grobs (for successful vignette building)
+
+library("ragg")
 library("hypoimg")
 ```
 
@@ -99,8 +103,6 @@ ggplot()+
 
 ---------------------------------
 
-<center>
-```{r, echo = FALSE,fig.asp = 1, out.height = "150pt", out.width = "150pt"}
-hypoimg:::hypo_logo()
+```{r, echo = FALSE, fig.asp = 1, out.height = "150pt", out.width = "150pt", fig.align = "center"}
+knitr::include_graphics("logo.svg")
 ```
-</center>

@@ -4,30 +4,43 @@
 \alias{hypo_anno_single}
 \title{One single hamlet legend element}
 \usage{
-hypo_anno_single(species, circle_color = NA, circle_fill = "white",
-  circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", xlims = 0.45, ylims = 0.335, ...)
+hypo_anno_single(
+  species,
+  circle_color = NA,
+  circle_fill = "white",
+  circle_lwd = 0.5,
+  plot_names = FALSE,
+  plot_name_size = 3,
+  font_family = "sans",
+  xlims = 0.45,
+  ylims = 0.335,
+  ...
+)
 }
 \arguments{
-\item{species}{string skalar (manatory), one of the available species}
+\item{species}{string scalar (manatory), one of the available species}
 
-\item{circle_color}{color skalar (a string, optional), the color of the
+\item{circle_color}{color scalar (a string, optional), the color of the
 background circle outline}
 
-\item{circle_fill}{color skalar (a string, optional), the fill of the
+\item{circle_fill}{color scalar (a string, optional), the fill of the
 background circle}
 
-\item{circle_lwd}{numeric skalar (optional), the width of the background
+\item{circle_lwd}{numeric scalar (optional), the width of the background
 circle outline}
 
-\item{plot_names}{logical skalar (optional), should the species label
+\item{plot_names}{logical scalar (optional), should the species label
 be added?}
 
-\item{plot_name_size}{numeric skalar (optional), the species label size}
+\item{plot_name_size}{numeric scalar (optional), the species label size}
 
-\item{font_family}{string skalar (optional), the species label font family}
+\item{font_family}{string scalar (optional), the species label font family}
 
-\item{xlims}{numeric skalar (optional), modifies the horizontal extent of the hamlet}
+\item{xlims}{numeric scalar (optional), modifies the horizontal extent of the hamlet}
+
+\item{ylims}{numeric scalar (optional), modifies the vertical extent of the hamlet}
+
+\item{...}{catch all parameter to allow excess parameter through purrr::pmap}
 }
 \description{
 \code{hypo_anno_single} combines a single hamlet with a colored circle
@@ -40,10 +53,10 @@ with a background circle which can be coloured.
 Aditionally, the species label can be added to the  plot.
 
 Available species:
-  "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-  "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
-  "liberte", "maculiferus", "maya", "nigricans", "providencianus",
-  "puella", "randallorum", "tan", "unicolor"
+"aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
+"floridae", "gemma", "gummigutta", "guttavarius", "indigo",
+"liberte", "maculiferus", "maya", "nigricans", "providencianus",
+"puella", "randallorum", "tan", "unicolor"
 }
 \examples{
 hypo_anno_single('indigo',circle_color = 'black',
@@ -52,5 +65,5 @@ hypo_anno_single('indigo',circle_color = 'black',
 }
 \seealso{
 \code{\link{hypo_anno_pair}},
-  \code{\link{hypo_anno_flag_single}}
+\code{\link{hypo_anno_flag_single}}
 }

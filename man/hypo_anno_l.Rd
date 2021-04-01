@@ -4,22 +4,21 @@
 \alias{hypo_anno_l}
 \title{Add a left facing hamlet to a ggplot}
 \usage{
-hypo_anno_l(species, xmin = -Inf, xmax = Inf, ymin = -Inf,
-  ymax = Inf)
+hypo_anno_l(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf)
 }
 \arguments{
-\item{species}{string skalar (manatory), one of "aberrans","atlahua",
+\item{species}{string scalar (manatory), one of "aberrans","atlahua",
 "castroaguirrei","chlorurus","ecosur","floridae","gemma","gummigutta",
 "guttavarius","indigo","liberte","maculiferus","maya","nigricans",
 "providencianus","puella","randallorum","tan","unicolor"}
 
-\item{xmin}{numeric skalar (optional), left boundary of the annotation}
+\item{xmin}{numeric scalar (optional), left boundary of the annotation}
 
-\item{xmax}{numeric skalar (optional), right boundary of the annotation}
+\item{xmax}{numeric scalar (optional), right boundary of the annotation}
 
-\item{ymin}{numeric skalar (optional), lower boundary of the annotation}
+\item{ymin}{numeric scalar (optional), lower boundary of the annotation}
 
-\item{ymax}{numeric skalar (optional), upper boundary of the annotation}
+\item{ymax}{numeric scalar (optional), upper boundary of the annotation}
 }
 \description{
 \code{hypo_anno_l} adds a left facing hamlet annotation to a ggplot.
@@ -40,5 +39,5 @@ aes(x = x, y = y))+
 }
 \seealso{
 \code{\link{hypo_anno_r}},
-  \code{\link{hypo_anno_flag}}
+\code{\link{hypo_anno_flag}}
 }

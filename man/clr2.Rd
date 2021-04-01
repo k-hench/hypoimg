@@ -4,7 +4,9 @@
 \name{clr2}
 \alias{clr2}
 \title{two colors}
-\format{An object of class \code{character} of length 2.}
+\format{
+An object of class \code{character} of length 2.
+}
 \usage{
 clr2
 }

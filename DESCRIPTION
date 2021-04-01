@@ -11,18 +11,33 @@ BugReports: https://github.com/k-hench/hypoimg/issues
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: tidyverse,
-         ggforce
-Depends: tidyverse,
-         cowplot,
-         ggforce,
-         grid,
-         gridSVG,
-         grImport2
-RoxygenNote: 6.1.1
+Imports: 
+    tidyverse,
+    ggforce,
+    lifecycle,
+    prismatic
+Depends: 
+    tidyverse,
+    cowplot,
+    ggforce,
+    grid,
+    gridSVG,
+    grImport2,
+    cli,
+    crayon,
+    purrr,
+    stringr,
+    tibble,
+    scico,
+    RColorBrewer,
+    ragg,
+    R (>= 2.10)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
 Suggests: knitr,
     rmarkdown,
     testthat,
     hypogen,
-    grConvert
+    grConvert,
+    viridis
 VignetteBuilder: knitr

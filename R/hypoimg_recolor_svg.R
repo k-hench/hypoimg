@@ -13,7 +13,6 @@
 #'
 #' @param file_path string skalar (manatory), the cairo svg to import
 #'
-#'
 #' @examples
 #' svg_file <- system.file("extdata", "logo.c.svg", package = "hypoimg")
 #' svg <- hypo_read_svg(svg_file)
@@ -37,11 +36,11 @@ hypo_read_svg <- function(file_path){
 #' @param layer integer skalar (optional), the layer to recolor
 #' @param color string skalar (optional), the new color
 #'
-#'
 #' @examples
 #' svg_file <- system.file("extdata", "logo.c.svg", package = "hypoimg")
 #' svg <- hypo_read_svg(svg_file)
-#' svg_new <- hypo_recolor_svg(svg,color = 'red')
+#' svg_new <- hypo_recolor_svg(svg, color = 'red')
+#' ggplot() + annotation_custom(grob = svg_new)
 #'
 #' @export
 hypo_recolor_svg <- function(svg, layer = 1, color = 'darkgray'){
@@ -70,7 +69,13 @@ hypo_recolor_svg <- function(svg, layer = 1, color = 'darkgray'){
 #' @seealso \code{\link{geom_hypo_grob}},
 #'
 #' @examples
-#' svg_tab <- recolor_grob_table(svg,LETTERS[1:3],c('red','green','blue'),layer = 1)
+#' svg_file <- system.file("extdata", "logo.c.svg", package = "hypoimg")
+#' svg <- hypo_read_svg(svg_file)
+#' svg_tab <- hypo_recolor_grob_table(svg,LETTERS[1:3], c('red', 'green', 'blue'), layer = 1)
+#' ggplot() +
+#'  geom_hypo_grob(data = svg_tab,
+#'   aes(x =x, y = y, grob = grob)) +
+#'   facet_wrap(grp ~ .)
 #'
 #' @export
 hypo_recolor_grob_table <- function(svg,layer = 1,

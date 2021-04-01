@@ -1,9 +1,25 @@
+#' hypoimg: Provides Hypoplectrus image annotations
+#'
+#' The hypoimg package provides illustrations to annotate
+#' plots within studies of the Caribbean hamlets (Hypoplectrus spp).
+#'
+#' @docType package
+#' @name hypoimg
+#'
+#' @importFrom cli rule
+#' @importFrom cli symbol
+#' @import crayon
+#' @import purrr
+#' @import stringr
+#' @import tibble
+NULL
+
 .onAttach <- function(libname, pkgname) {
-  cat("--- Welcome to",crayon::red("hypoimg"),"---\n")
+  # cat("--- Welcome to",crayon::red("hypoimg"),"---\n")
 }
 
 .onLoad <- function(libname, pkgname) {
-  theme_set(theme_grey())
+  # theme_set(theme_grey())
 }
 #' Add a left facing hamlet to a ggplot
 #'
@@ -13,14 +29,14 @@
 #' The function \code{hypo_anno_l} uses the \code{ggplot2::annotation_custom()}
 #' function to add a single left facing hamlet to an existring ggplot.
 #'
-#' @param species string skalar (manatory), one of "aberrans","atlahua",
+#' @param species string scalar (manatory), one of "aberrans","atlahua",
 #'   "castroaguirrei","chlorurus","ecosur","floridae","gemma","gummigutta",
 #'   "guttavarius","indigo","liberte","maculiferus","maya","nigricans",
 #'   "providencianus","puella","randallorum","tan","unicolor"
-#' @param xmin numeric skalar (optional), left boundary of the annotation
-#' @param xmax numeric skalar (optional), right boundary of the annotation
-#' @param ymin numeric skalar (optional), lower boundary of the annotation
-#' @param ymax numeric skalar (optional), upper boundary of the annotation
+#' @param xmin numeric scalar (optional), left boundary of the annotation
+#' @param xmax numeric scalar (optional), right boundary of the annotation
+#' @param ymin numeric scalar (optional), lower boundary of the annotation
+#' @param ymax numeric scalar (optional), upper boundary of the annotation
 #'
 #' @seealso \code{\link{hypo_anno_r}},
 #'   \code{\link{hypo_anno_flag}}
@@ -52,14 +68,15 @@ hypo_anno_l <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #' The function \code{hypo_anno_r} uses the \code{ggplot2::annotation_custom()}
 #' function to add a single right facing hamlet to a existring ggplot.
 #'
-#' @param species string skalar (manatory), one of "aberrans","atlahua",
+#' @param species string scalar (manatory), one of "aberrans","atlahua",
 #'   "castroaguirrei","chlorurus","ecosur","floridae","gemma","gummigutta",
 #'   "guttavarius","indigo","liberte","maculiferus","maya","nigricans",
 #'   "providencianus","puella","randallorum","tan","unicolor"
-#' @param xmin numeric skalar (optional), left boundary of the annotation
-#' @param xmax numeric skalar (optional), right boundary of the annotation
-#' @param ymin numeric skalar (optional), lower boundary of the annotation
-#' @param ymax numeric skalar (optional), upper boundary of the annotation
+#' @param xmin numeric scalar (optional), left boundary of the annotation
+#' @param xmax numeric scalar (optional), right boundary of the annotation
+#' @param ymin numeric scalar (optional), lower boundary of the annotation
+#' @param ymax numeric scalar (optional), upper boundary of the annotation
+#' @param ...  catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_anno_l}},
 #'   \code{\link{hypo_anno_flag}}
@@ -73,7 +90,7 @@ hypo_anno_l <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #'  coord_cartesian(xlim = c(0, 2), ylim = c(0, 2))
 #'
 #' @export
-hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf,...){
+hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, ...){
   stopifnot(length(species) == 1)
   stopifnot(is.character(species))
   stopifnot(species %in% hypo_img$spec)
@@ -99,18 +116,20 @@ hypo_anno_r <- function(species, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = In
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
-#' @param species string skalar (manatory), one of the available species
-#' @param circle_color color skalar (a string, optional), the color of the
+#' @param species string scalar (manatory), one of the available species
+#' @param circle_color color scalar (a string, optional), the color of the
 #'   background circle outline
-#' @param circle_fill color skalar (a string, optional), the fill of the
+#' @param circle_fill color scalar (a string, optional), the fill of the
 #'   background circle
-#' @param circle_lwd numeric skalar (optional), the width of the background
+#' @param circle_lwd numeric scalar (optional), the width of the background
 #'   circle outline
-#' @param plot_names logical skalar (optional), should the species label
+#' @param plot_names logical scalar (optional), should the species label
 #'   be added?
-#' @param plot_name_size numeric skalar (optional), the species label size
-#' @param font_family string skalar (optional), the species label font family
-#' @param xlims numeric skalar (optional), modifies the horizontal extent of the hamlet
+#' @param plot_name_size numeric scalar (optional), the species label size
+#' @param font_family string scalar (optional), the species label font family
+#' @param xlims numeric scalar (optional), modifies the horizontal extent of the hamlet
+#' @param ylims numeric scalar (optional), modifies the vertical extent of the hamlet
+#' @param ...   catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_anno_pair}},
 #'   \code{\link{hypo_anno_flag_single}}
@@ -143,7 +162,8 @@ hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", 
     scale_x_continuous(expand = c(0, 0))+
     scale_y_continuous(limits = c(-.4, .35 + (.3 * as.numeric(plot_names))),expand = c(0, 0))+
     annotation_custom(hypo_img$l[[nr_species]],
-                      xmin = -xlims,xmax = xlims,ymin = -ylims, ymax = ylims)
+                      xmin = -xlims, xmax = xlims,
+                      ymin = -ylims, ymax = ylims)
 
   if(plot_names){
     names_df <- tibble(name = str_c('italic(',hypo_img$geno[nr_species],'.~',species,')'),
@@ -175,18 +195,19 @@ hypo_anno_single <- function(species, circle_color = NA, circle_fill = "white", 
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
-#' @param left string skalar (manatory), one of the available species
-#' @param right string skalar (manatory), one of the available species
-#' @param circle_color color skalar (a string, optional), the color of the
+#' @param left string scalar (manatory), one of the available species
+#' @param right string scalar (manatory), one of the available species
+#' @param circle_color color scalar (a string, optional), the color of the
 #'   background circle outline
-#' @param circle_fill color skalar (a string, optional), the fill of the
+#' @param circle_fill color scalar (a string, optional), the fill of the
 #'   background circle
-#' @param circle_lwd numeric skalar (optional), the width of the background
+#' @param circle_lwd numeric scalar (optional), the width of the background
 #'   circle outline
-#' @param plot_names logical skalar (optional), should the species labels
+#' @param plot_names logical scalar (optional), should the species labels
 #'   be added?
-#' @param plot_name_size numeric skalar (optional), the species label size
-#' @param font_family string skalar (optional), the species label font family
+#' @param plot_name_size numeric scalar (optional), the species label size
+#' @param font_family string scalar (optional), the species label font family
+#' @param ... catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_anno_single}},
 #'   \code{\link{hypo_anno_flag_pair}}
@@ -254,20 +275,21 @@ hypo_anno_pair <- function(left, right, circle_color = NA, circle_fill = "white"
 #'   "liberte", "maculiferus", "maya", "nigricans", "providencianus",
 #'   "puella", "randallorum", "tan", "unicolor"
 #'
-#' @param left string skalar (manatory), one of the available species
-#' @param right string skalar (manatory), one of the available species
-#' @param circle_color color skalar (a string, optional), the color of the
+#' @param left string scalar (manatory), one of the available species
+#' @param right string scalar (manatory), one of the available species
+#' @param circle_color color scalar (a string, optional), the color of the
 #'   background circle outline
-#' @param circle_fill_left color skalar (a string, optional), the fill of the
+#' @param circle_fill_left color scalar (a string, optional), the fill of the
 #'   left background
-#' @param circle_fill_right color skalar (a string, optional), the fill of the
+#' @param circle_fill_right color scalar (a string, optional), the fill of the
 #'   right background
-#' @param circle_lwd numeric skalar (optional), the width of the background
+#' @param circle_lwd numeric scalar (optional), the width of the background
 #'   circle outline
-#' @param plot_names logical skalar (optional), should the species labels
+#' @param plot_names logical scalar (optional), should the species labels
 #'   be added?
-#' @param plot_name_size numeric skalar (optional), the species label size
-#' @param font_family string skalar (optional), the species label font family
+#' @param plot_name_size numeric scalar (optional), the species label size
+#' @param font_family string scalar (optional), the species label font family
+#' @param ... catch all parameter to allow excess parameter through purrr::pmap
 #'
 #' @seealso \code{\link{hypo_anno_single}},
 #'   \code{\link{hypo_anno_flag_pair}}
@@ -342,16 +364,17 @@ hypo_anno_pair_split <- function(left, right, circle_color = NA, circle_fill_lef
 #' @param species string vector (manatory), can only contain available species
 #' @param color_map color vector (a string, optional), the color map (must
 #'   match the species vector in length)
-#' @param circle_color color skalar (a string, optional), the color of the
+#' @param circle_color color scalar (a string, optional), the color of the
 #'   background circle outline
-#' @param circle_lwd numeric skalar (optional), the width of the background
+#' @param circle_lwd numeric scalar (optional), the width of the background
 #'   circle outlines
-#' @param plot_names logical skalar (optional), should the species label
+#' @param plot_names logical scalar (optional), should the species label
 #'   be added?
-#' @param plot_name_size numeric skalar (optional), the species label size
-#' @param font_family string skalar (optional), the species label font family
+#' @param plot_name_size numeric scalar (optional), the species label size
+#' @param font_family string scalar (optional), the species label font family
 #' @param plot logical scalar (optional), toggle the output to be either a plot
 #'   or a list of plots
+#' @param ncol integer, number of columns
 #'
 #' @seealso \code{\link{hypo_legend_pair}},
 #'   \code{\link{hypo_legend_flag_single}}
@@ -414,28 +437,29 @@ hypo_legend_single <- function(species,color_map,
 #' @param right string vector (manatory), can only contain available species
 #' @param color_map color vector (a string, optional), the color map (must
 #'   match the species vector in length)
-#' @param circle_color color skalar (a string, optional), the color of the
+#' @param circle_color color scalar (a string, optional), the color of the
 #'   background circle outline
-#' @param circle_lwd numeric skalar (optional), the width of the background
+#' @param circle_lwd numeric scalar (optional), the width of the background
 #'   circle outlines
-#' @param plot_names logical skalar (optional), should the species label
+#' @param plot_names logical scalar (optional), should the species label
 #'   be added?
-#' @param plot_name_size numeric skalar (optional), the species label size
-#' @param font_family string skalar (optional), the species label font family
+#' @param plot_name_size numeric scalar (optional), the species label size
+#' @param font_family string scalar (optional), the species label font family
 #' @param plot logical scalar (optional), toggle the output to be either a plot
 #'   or a list of plots
+#' @param ncol integer, number of columns
 #'
 #' @seealso \code{\link{hypo_legend_single}},
 #'   \code{\link{hypo_legend_flag_pair}}
 #'
 #' @examples
-# clr <- viridis::viridis(4)
-#
-# left <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
-# right <- c('guttavarius', 'gummigutta', 'atlahua', 'randallorum')
-#
-# hypo_legend_pair(left= left, right = right, color_map = clr,
-#   circle_color = 'black', plot_names = TRUE)
+#' clr <- viridis::viridis(4)
+#'
+#' left <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
+#' right <- c('guttavarius', 'gummigutta', 'atlahua', 'randallorum')
+#'
+#' hypo_legend_pair(left= left, right = right, color_map = clr,
+#'   circle_color = 'black', plot_names = TRUE)
 #' @export
 hypo_legend_pair <- function(left,right,color_map,
                              circle_color = NA, circle_lwd = .5,
@@ -490,16 +514,17 @@ hypo_legend_pair <- function(left,right,color_map,
 #'   match the species vector in length)
 #' @param color_map_right color vector (a string, optional), the color map (must
 #'   match the species vector in length)
-#' @param circle_color color skalar (a string, optional), the color of the
+#' @param circle_color color scalar (a string, optional), the color of the
 #'   background circle outline
-#' @param circle_lwd numeric skalar (optional), the width of the background
+#' @param circle_lwd numeric scalar (optional), the width of the background
 #'   circle outlines
-#' @param plot_names logical skalar (optional), should the species label
+#' @param plot_names logical scalar (optional), should the species label
 #'   be added?
-#' @param plot_name_size numeric skalar (optional), the species label size
-#' @param font_family string skalar (optional), the species label font family
+#' @param plot_name_size numeric scalar (optional), the species label size
+#' @param font_family string scalar (optional), the species label font family
 #' @param plot logical scalar (optional), toggle the output to be either a plot
 #'   or a list of plots
+#' @param ncol interger, number of columns
 #'
 #' @seealso \code{\link{hypo_legend_single}},
 #'   \code{\link{hypo_legend_flag_pair}}

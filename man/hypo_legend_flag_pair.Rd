@@ -4,10 +4,20 @@
 \alias{hypo_legend_flag_pair}
 \title{Constructs a legend of paired flags}
 \usage{
-hypo_legend_flag_pair(left, right, color_map, flag_lwd = 1,
-  flag_line_color = NA, flag_radius_scale = 1, circle_color = NA,
-  circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", plot = TRUE)
+hypo_legend_flag_pair(
+  left,
+  right,
+  color_map,
+  flag_lwd = 1,
+  flag_line_color = NA,
+  flag_radius_scale = 1,
+  circle_color = NA,
+  circle_lwd = 0.5,
+  plot_names = FALSE,
+  plot_name_size = 3,
+  font_family = "sans",
+  plot = TRUE
+)
 }
 \arguments{
 \item{left}{string vector (manatory), one of the available flag IDs}
@@ -63,5 +73,5 @@ hypo_legend_flag_pair(left = left_flag, right = right_flag,
 }
 \seealso{
 \code{\link{hypo_legend_single}},
-  \code{\link{hypo_legend_pair}}
+\code{\link{hypo_legend_pair}}
 }

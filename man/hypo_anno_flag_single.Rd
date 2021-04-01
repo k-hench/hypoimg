@@ -4,10 +4,19 @@
 \alias{hypo_anno_flag_single}
 \title{One single flag legend element}
 \usage{
-hypo_anno_flag_single(geo, flag_lwd = 1, flag_line_color = NA,
-  flag_radius_scale = 1, circle_color = NA, circle_fill = "white",
-  circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", ...)
+hypo_anno_flag_single(
+  geo,
+  flag_lwd = 1,
+  flag_line_color = NA,
+  flag_radius_scale = 1,
+  circle_color = NA,
+  circle_fill = "white",
+  circle_lwd = 0.5,
+  plot_names = FALSE,
+  plot_name_size = 3,
+  font_family = "sans",
+  ...
+)
 }
 \arguments{
 \item{geo}{string skalar (manatory), one of the available flag IDs}
@@ -36,6 +45,8 @@ be added?}
 \item{plot_name_size}{numeric skalar (optional), the species label size}
 
 \item{font_family}{string skalar (optional), the species label font family}
+
+\item{...}{catch all parameter to allow excess parameter through purrr::pmap}
 }
 \description{
 \code{hypo_anno_flag_single} combines a single flag with a colored circle
@@ -55,5 +66,5 @@ hypo_anno_flag_single(geo = 'trinidad_and_tobago',
 }
 \seealso{
 \code{\link{hypo_anno_flag_pair}},
-  \code{\link{hypo_anno_single}}
+\code{\link{hypo_anno_single}}
 }

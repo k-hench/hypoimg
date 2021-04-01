@@ -4,21 +4,30 @@
 \alias{hypo_hamlet_generic}
 \title{Add a generic hamlet to a ggplot}
 \usage{
-hypo_hamlet_generic(col = "darkgray", x_in = 0.5, y_in = 0.5,
-  width_in = 1, height_in = 1, face = c("l", "r"), ...)
+hypo_hamlet_generic(
+  col = "darkgray",
+  x_in = 0.5,
+  y_in = 0.5,
+  width_in = 1,
+  height_in = 1,
+  face = c("l", "r"),
+  ...
+)
 }
 \arguments{
 \item{col}{string  (color, optional), defaul = darkgray}
 
-\item{width_in}{numeric skalar (optional), width (in graph x axis units)}
+\item{x_in}{horizontal position}
 
-\item{height_in}{numeric skalar (optional), width (in graph y axis units)}
+\item{y_in}{vertical position}
 
-\item{face}{string skalar (optional), one of l,r side the hamlet is facing}
+\item{width_in}{numeric scalar (optional), width (in graph x axis units)}
 
-\item{x}{numeric skalar (optional), horizontal center for hamlet placement}
+\item{height_in}{numeric scalar (optional), width (in graph y axis units)}
 
-\item{y}{numeric skalar (optional), vertical center for hamlet placement}
+\item{face}{string scalar (optional), one of l,r side the hamlet is facing}
+
+\item{...}{catch all parameter to allow excess parameter through purrr::pmap}
 }
 \description{
 \code{hypo_hamlet_generic} adds a generic hamlet with custom color.

@@ -4,9 +4,18 @@
 \alias{hypo_legend_pair}
 \title{Constructs a legend of paired hamlets}
 \usage{
-hypo_legend_pair(left, right, color_map, circle_color = NA,
-  circle_lwd = 0.5, plot_names = FALSE, plot_name_size = 3,
-  font_family = "sans", ncol = 1, plot = TRUE)
+hypo_legend_pair(
+  left,
+  right,
+  color_map,
+  circle_color = NA,
+  circle_lwd = 0.5,
+  plot_names = FALSE,
+  plot_name_size = 3,
+  font_family = "sans",
+  ncol = 1,
+  plot = TRUE
+)
 }
 \arguments{
 \item{left}{string vector (manatory), can only contain available species}
@@ -16,18 +25,20 @@ hypo_legend_pair(left, right, color_map, circle_color = NA,
 \item{color_map}{color vector (a string, optional), the color map (must
 match the species vector in length)}
 
-\item{circle_color}{color skalar (a string, optional), the color of the
+\item{circle_color}{color scalar (a string, optional), the color of the
 background circle outline}
 
-\item{circle_lwd}{numeric skalar (optional), the width of the background
+\item{circle_lwd}{numeric scalar (optional), the width of the background
 circle outlines}
 
-\item{plot_names}{logical skalar (optional), should the species label
+\item{plot_names}{logical scalar (optional), should the species label
 be added?}
 
-\item{plot_name_size}{numeric skalar (optional), the species label size}
+\item{plot_name_size}{numeric scalar (optional), the species label size}
 
-\item{font_family}{string skalar (optional), the species label font family}
+\item{font_family}{string scalar (optional), the species label font family}
+
+\item{ncol}{integer, number of columns}
 
 \item{plot}{logical scalar (optional), toggle the output to be either a plot
 or a list of plots}
@@ -42,12 +53,21 @@ from two vectors of hamlet species and a choosen color map (matching in length).
 Hamlet species labels can optionally be included.
 
 Available species:
-  "aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
-  "floridae", "gemma", "gummigutta", "guttavarius", "indigo",
-  "liberte", "maculiferus", "maya", "nigricans", "providencianus",
-  "puella", "randallorum", "tan", "unicolor"
+"aberrans", "atlahua", "castroaguirrei", "chlorurus", "ecosur",
+"floridae", "gemma", "gummigutta", "guttavarius", "indigo",
+"liberte", "maculiferus", "maya", "nigricans", "providencianus",
+"puella", "randallorum", "tan", "unicolor"
+}
+\examples{
+clr <- viridis::viridis(4)
+
+left <- c('unicolor', 'liberte', 'maya', 'castroaguirrei')
+right <- c('guttavarius', 'gummigutta', 'atlahua', 'randallorum')
+
+hypo_legend_pair(left= left, right = right, color_map = clr,
+  circle_color = 'black', plot_names = TRUE)
 }
 \seealso{
 \code{\link{hypo_legend_single}},
-  \code{\link{hypo_legend_flag_pair}}
+\code{\link{hypo_legend_flag_pair}}
 }

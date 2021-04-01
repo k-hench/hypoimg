@@ -4,7 +4,9 @@
 \name{clr5}
 \alias{clr5}
 \title{five colors}
-\format{An object of class \code{character} of length 5.}
+\format{
+An object of class \code{character} of length 5.
+}
 \usage{
 clr5
 }

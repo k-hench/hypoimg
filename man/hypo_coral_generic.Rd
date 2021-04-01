@@ -4,24 +4,33 @@
 \alias{hypo_coral_generic}
 \title{Add a generic coral to a ggplot}
 \usage{
-hypo_coral_generic(col = "darkgray", x_in = 0.5, y_in = 0.5,
-  width_in = 1, height_in = 1, coral_side = c("l", "r"),
-  coral_type = c("branch", "table", "brain"), ...)
+hypo_coral_generic(
+  col = "darkgray",
+  x_in = 0.5,
+  y_in = 0.5,
+  width_in = 1,
+  height_in = 1,
+  coral_side = c("l", "r"),
+  coral_type = c("branch", "table", "brain"),
+  ...
+)
 }
 \arguments{
 \item{col}{string  (color, optional), defaul = darkgray}
 
-\item{width_in}{numeric skalar (optional), width (in graph x axis units)}
+\item{x_in}{horizontal position}
 
-\item{height_in}{numeric skalar (optional), width (in graph y axis units)}
+\item{y_in}{vertical position}
 
-\item{coral_side}{string skalar (optional), one of (l, r) - orientation of the coral}
+\item{width_in}{numeric scalar (optional), width (in graph x axis units)}
 
-\item{coral_type}{string skalar (optional), one of (branch, table, brain) - coral type}
+\item{height_in}{numeric scalar (optional), width (in graph y axis units)}
 
-\item{x}{numeric skalar (optional), horizontal center for coral placement}
+\item{coral_side}{string scalar (optional), one of (l, r) - orientation of the coral}
 
-\item{y}{numeric skalar (optional), vertical center for coral placement}
+\item{coral_type}{string scalar (optional), one of (branch, table, brain) - coral type}
+
+\item{...}{catch all parameter to allow excess parameter through purrr::pmap}
 }
 \description{
 \code{hypo_coral_generic} adds a generic coral with custom color.

@@ -4,15 +4,19 @@
 \alias{hypo_save}
 \title{Add metadata to exported plots}
 \usage{
-hypo_save(filename, plot = last_plot(),
-  comment = "exported with hypoimg::hypo_save()", ...)
+hypo_save(
+  filename,
+  plot = last_plot(),
+  comment = "exported with hypoimg::hypo_save()",
+  ...
+)
 }
 \arguments{
 \item{filename}{File name to create on disk.}
 
 \item{plot}{Plot to save, defaults to last plot displayed.}
 
-\item{comment}{string skalar,comment to add to the figure metadata.}
+\item{comment}{string scalar,comment to add to the figure metadata.}
 
 \item{...}{Other arguments passed on to the \code{ggsave()} function.}
 }

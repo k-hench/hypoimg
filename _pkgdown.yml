@@ -35,6 +35,16 @@ reference:
       - hypo_anno_flag_pair
       - hypo_legend_flag_single
       - hypo_legend_flag_pair
+  - title: "hypoimg data"
+    desc: >
+      graphical objects included in the package
+    contents:
+     - hypo_coral_img
+     - hypo_flag
+     - hypo_generic_img
+     - hypo_img
+     - hypo_outline
+     - hypo_trait_img
   - title: "Geom grob functions"
     desc: >
       Introducing facettable annotations.
@@ -54,3 +64,5 @@ reference:
       - clr5
       - clr_darken
       - clr_lighten
+      - hypo_recolor_svg
+      - hypo_recolor_grob_table
