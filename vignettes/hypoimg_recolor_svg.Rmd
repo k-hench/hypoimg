@@ -32,10 +32,10 @@ library("hypoimg")
 
 The **hypoimg** package provides tools read external svg files into R to use for plot annotation.
 (The svg needs to be a cairo svg - to transform your svg into
-this format use the **grConvert** package)
+this format use the **rsvg** package)
 
 ```{r, eval = FALSE}
-grConvert::convertPicture("image.svg","image.c.svg")
+rsvg::rsvg_svg("image.svg","image.c.svg")
 ```
 
 ```{r basicUsage, message = FALSE, warning = FALSE, out.width = "95%", fig.width = 12}

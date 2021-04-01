@@ -38,6 +38,6 @@ Suggests: knitr,
     rmarkdown,
     testthat,
     hypogen,
-    grConvert,
+    rsvg,
     viridis
 VignetteBuilder: knitr
