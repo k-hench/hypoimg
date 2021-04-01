@@ -21,11 +21,12 @@
 #' @seealso \code{\link{hypo_show_metadata}},
 #' @export
 #' @examples
-#' tibble(x = rnorm(20),y= rnorm(20)) %>%
-#'   ggplot(aes(x,y))+geom_point()
-#'
-#' hypo_save('~/Desktop/test_plot.png',comment = 'Created by script test.R')
-#' hypo_show_metadata('~/Desktop/test_plot.png')
+#' # only works with exiftools installed - commented out for build
+#' # tibble(x = rnorm(20),y= rnorm(20)) %>%
+#' #   ggplot(aes(x,y))+geom_point()
+#' #
+#' # hypo_save('~/Desktop/test_plot.png',comment = 'Created by script test.R')
+#' # hypo_show_metadata('~/Desktop/test_plot.png')
 #'
 hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hypoimg::hypo_save()', ...){
   file_type <- filename %>% str_sub(.,start = -3,end = -1)
@@ -63,11 +64,12 @@ hypo_save <- function(filename, plot = last_plot(), comment = 'exported with hyp
 #' @seealso \code{\link{hypo_save}},
 #' @export
 #' @examples
-#' tibble(x = rnorm(20),y= rnorm(20)) %>%
-#'   ggplot(aes(x,y))+geom_point()
-#'
-#' hypo_save('~/Desktop/test_plot.png',comment = 'Created by script test.R')
-#' hypo_show_metadata('~/Desktop/test_plot.png')
+#' # only works with exiftools installed - commented out for build
+#' # tibble(x = rnorm(20),y= rnorm(20)) %>%
+#' #   ggplot(aes(x,y))+geom_point()
+#' #
+#' # hypo_save('~/Desktop/test_plot.png',comment = 'Created by script test.R')
+#' # hypo_show_metadata('~/Desktop/test_plot.png')
 hypo_show_metadata <- function(filename){
   command <- str_c('exiftool ',filename,' | grep Description | sed "s/.*: //"')
   system(command,intern = TRUE)

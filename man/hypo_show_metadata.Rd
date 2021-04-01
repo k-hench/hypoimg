@@ -24,11 +24,12 @@ to be installed and located within the $PATH.
 See https://www.sno.phy.queensu.ca/~phil/exiftool/index.html
 }
 \examples{
-tibble(x = rnorm(20),y= rnorm(20)) \%>\%
-  ggplot(aes(x,y))+geom_point()
-
-hypo_save('~/Desktop/test_plot.png',comment = 'Created by script test.R')
-hypo_show_metadata('~/Desktop/test_plot.png')
+# only works with exiftools installed - commented out for build
+# tibble(x = rnorm(20),y= rnorm(20)) \%>\%
+#   ggplot(aes(x,y))+geom_point()
+#
+# hypo_save('~/Desktop/test_plot.png',comment = 'Created by script test.R')
+# hypo_show_metadata('~/Desktop/test_plot.png')
 }
 \seealso{
 \code{\link{hypo_save}},
