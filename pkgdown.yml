@@ -1,0 +1,12 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  hypoimg: hypoimg.html
+  hypoimg_geom_grob: hypoimg_geom_grob.html
+  hypoimg_recolor_svg: hypoimg_recolor_svg.html
+last_built: 2021-04-01T16:10Z
+urls:
+  reference: https://k-hench.github.io/hypoimg//reference
+  article: https://k-hench.github.io/hypoimg//articles
+
