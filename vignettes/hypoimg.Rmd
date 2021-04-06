@@ -47,7 +47,7 @@ remotes::install_github("k-hench/hypoimg")
 
 The core of the **hypoimg** package is the selection of hamlet illustrations:
 
-```{r hypoGallery, echo = FALSE, out.width = "95%", fig.width = 12}
+```{r hypoGallery, echo = FALSE, out.width = "95%", fig.width = 12, fig.asp = .15}
 ggplot(tibble(x = c(0,5.2), y = c(0,0)),aes(x = x, y = y))+
   geom_blank()+theme_void()+
   coord_fixed()+
@@ -69,7 +69,7 @@ hypo_img
 
 A pure version of the hamlet annotations can be added to any ggplot using the the functions `hypo_anno_l()` and `hypo_anno_r()`. These functions are simple wrappers around the **ggplot2** function `annotation_custom(()`.
 
-```{r pureAnno, out.width = "95%", out.height = "90%", fig.width = 9}
+```{r pureAnno, out.width = "95%", out.height = "90%", fig.width = 9, fig.asp = .33}
 ggplot(tibble(x = c(3, 3.25, 3.75),y = c(-.1, -.3, .3)),
        aes(x = x, y = y))+
   geom_line(size = 4, color = "#35B779")+
@@ -194,7 +194,7 @@ ggplot(pairing_data, aes(y = pairing_egg_counts,
 
 ## Flag annotations
 
-```{r flagGallery, echo = FALSE, out.width = "95%", fig.width = 12}
+```{r flagGallery, echo = FALSE, out.width = "95%", fig.width = 12, fig.asp = .15}
 ggplot(tibble(x = c(0,5.2), y = c(0,0)),aes(x = x, y = y))+
   geom_blank()+
   theme_void()+
