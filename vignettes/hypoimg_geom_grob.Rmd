@@ -82,6 +82,5 @@ ggplot()+
 ---------------------------------
 
 ```{r, echo = FALSE, fig.asp = 1, out.height = "150pt", out.width = "150pt", fig.align = "center"}
-library(grImport2)
-grid.picture(grImport2::readPicture("vignettes/logo.c.svg"))
+grImport2::grid.picture(grImport2::readPicture("logo.c.svg"))
 ```
