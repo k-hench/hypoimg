@@ -253,5 +253,6 @@ cowplot::plot_grid(p1, p2, p3, nrow = 1)
 ---------------------------------
 
 ```{r, echo = FALSE, fig.asp = 1, out.height = "150pt", out.width = "150pt", fig.align = "center"}
-knitr::include_graphics("logo.svg")
+library(grImport2)
+grid.picture(grImport2::readPicture("vignettes/logo.c.svg"))
 ```
