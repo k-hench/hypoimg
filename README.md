@@ -6,7 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/k-hench/hypoimg/workflows/R-CMD-check/badge.svg)](https://github.com/k-hench/hypoimg/actions)
-[![](https://img.shields.io/badge/devel%20version-1.0.1.3-blue.svg)](https://github.com/k-hench/hypoimg)
+[![](https://img.shields.io/badge/devel%20version-1.0.1.2-blue.svg)](https://github.com/k-hench/hypoimg)
+[![DOI](https://zenodo.org/badge/142976661.svg)](https://zenodo.org/badge/latestdoi/142976661)
 <!-- badges: end -->
 
 The **R** package **hypoimg** provides hamlet drawings to annotate

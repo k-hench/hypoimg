@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/k-hench/hypoimg/workflows/R-CMD-check/badge.svg)](https://github.com/k-hench/hypoimg/actions)
 `r badger::badge_devel("k-hench/hypoimg", "blue")`
+[![DOI](https://zenodo.org/badge/142976661.svg)](https://zenodo.org/badge/latestdoi/142976661)
 <!-- badges: end -->
 
 
