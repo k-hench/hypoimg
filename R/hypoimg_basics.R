@@ -576,14 +576,18 @@ hypo_legend_pair_split <- function(left,right,
 }
 
 
-hypo_logo <- function(){
+hypo_logo <- function(alpha = 1){
   svg_file <- system.file("extdata", "logo.c.svg", package = "hypoimg")
   svg <- hypo_read_svg(svg_file)
+
+  svg <- hypo_recolor_svg(svg = svg, layer = 1, color = rgb(1,1,1, alpha))
+  svg <- hypo_recolor_svg(svg = svg, layer = 2, color = rgb(0,0,0, alpha))
 
   ggplot(tibble(x = 0))+
     coord_equal(xlim = c(-1.1,1.1))+
     geom_circle(aes(x0 = x, y0 = x, r = .9),
-                color = rgb(1,1,1,0), fill = '#cccccc')+
+                color = rgb(1,1,1,0), fill = rgb(.8,.8,.8, alpha))+
     annotation_custom(svg,xmin = -1,xmax = 1)+
     theme_void()
 }
+
