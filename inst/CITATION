@@ -1,0 +1,19 @@
+citHeader("The official zenodo citation for {hypoimg} is:")
+
+citEntry(entry = "misc",
+         key = "hypoimg",
+         title        = "k-hench/hypoimg: First hypoimg release",
+         author       = personList(as.person("Kosmas Hench")),
+         year         = "2021",
+         url          = "https://zenodo.org/record/4675954",
+         doi          = "10.5281/ZENODO.4675954",
+         publisher    = "Zenodo",
+         copyright    = "Open Access",
+
+         textVersion  =
+           paste("Hench, Kosmas (2021).",
+                 "k-hench/hypoimg: First hypoimg release.",
+                 "Zenodo.",
+                 "https://doi.org/10.5281/ZENODO.4675954")
+)
+
