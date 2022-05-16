@@ -1,3 +1,8 @@
+# hypoimg 1.0.1.3
+
+* re-building grob-tables for new grid / R-version
+* include all images as cairo svgs.
+
 # hypoimg 1.0.1.1
 
 * adding more coral types.
